@@ -6,7 +6,7 @@ import copy
 # Gathering Data
 print("Gathering and Preprocessing Data")
 Data = []
-with open("/Users/expwnential/Desktop/Uro/uro.csv") as file:
+with open("/Users/expwnential/UroRhabdo/uro.csv") as file:
 	CSV = csv.reader(file, delimiter=',')
 	for row in CSV:
 		Data.append(row)
@@ -127,7 +127,7 @@ for i in range(len(Headers)):
 		Vital = Data[:,i+1]
 		Alive = Vital == 'Alive'
 		Dead = Vital == 'Dead'
-		Cause = Data[:,i+1]
+		Cause = Data[:,i+2]
 		DeadDX = Cause == 'Dead (attributable to this cancer dx)'
 
 		Y = Surv >= 60
@@ -211,17 +211,22 @@ for i in range(len(Headers)):
 		print("Preprocessed Hist")
 
 Data = np.array([Age, Race, Sex, Site, Stage, Size, Surg, Rad, Hist]).T
-Labels = np.array([Surv, Surv>=60]).T
+#Labels = np.array([Surv, Surv>=60]).T
+spec = np.array([Surv, np.logical_or(Surv >= 60, np.logical_and(Surv < 60, Cause == 'Alive or dead of other cause'))]).T # Cancer Specific
+over = np.array([Surv, Surv >= 60]).T # Overall
 
 if clean:
 	usable = np.logical_and(np.invert(np.logical_or(np.logical_or(race_unkwn, size_unkwn), hist_unkwn)), usable)
-#pdb.set_trace()
 Data = Data[usable]
-Labels = Labels[usable]
+#Labels = Labels[usable]
+spec = spec[usable]
+over = over[usable]
 IDs = IDs[usable]
 
+print(f'Specific = {spec[:,1].astype(int).sum()}, Overall = {over[:,1].astype(int).sum()}')
+
 print(Data.shape)
-np.savez('Data.npz', Data=Data, Labels=Labels, IDs=IDs)
+np.savez('Data.npz', Data=Data, spec=spec, over=over, IDs=IDs)
 
 
 

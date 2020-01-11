@@ -2,61 +2,71 @@ import torch
 import pdb
 import numpy as np
 from model import *
+from utils import *
+
 
 # Training Parameters
 k = 10				# Groups for k-fold validation
 width = 512			# Width of model
-epochs = 5000		# Training epochs for each fold
+epochs = 1000		# Training epochs for each fold
 
 
 # Loading preprocessed data and splitting
 Data = np.load("Data.npz")
-Data, Labels, IDs = torch.Tensor(Data['Data']), torch.Tensor(Data['Labels']), Data['IDs']
-groups = torch.chunk(torch.randperm(len(IDs)), k)
+Data, spec, over, IDs = torch.Tensor(Data['Data']), torch.Tensor(Data['spec']), torch.Tensor(Data['over']), Data['IDs']
+groups1 = torch.chunk(torch.randperm(len(IDs)), k)
+groups2 = torch.chunk(torch.randperm(len(IDs)), k)
 
 
 # K-fold validation
 for i in range(k):
 
-	# Build k-th train and test set
-	xtrain = torch.Tensor([])
-	strain = torch.Tensor([])
-	ptrain = torch.Tensor([])
-	for j in range(k):
-		if i != j:
-			xtrain = torch.cat((xtrain, Data[groups[j]]))
-			strain = torch.cat((strain, Labels[groups[j],0]))
-			ptrain = torch.cat((ptrain, Labels[groups[j],1]))
-		else: 
-			xtest = Data[groups[j]]
-			stest = Labels[groups[j],0]
-			ptest = Labels[groups[j],1]
+	# Build k-th specific model, train/test set and train
+	spec_xtrain, spec_strain, spec_ptrain, spec_xtest, spec_stest, spec_ptest = train_and_test_set(Data, spec, groups1, i, k)
 
+	spec_model = Model(width)
+	spec_optim = torch.optim.Adam(spec_model.parameters(), lr = 3e-4)
 
-	model = Model(width)
-	optim = torch.optim.Adam(model.parameters(), lr = 3e-4)
-
+	print(f'Training Disease Specific Survival Model #{i} ')
 	for epoch in range(epochs):
 
-		prob, pred = model(xtrain)
-		tprob, tpred = model(xtest)
-
-		mse  = F.mse_loss(pred, strain)
-		bce  = F.binary_cross_entropy(prob, ptrain)
-		tmse = F.mse_loss(tpred, stest)
-		tbce = F.binary_cross_entropy(tprob, ptest)
-
-		loss  = mse + bce
-		tloss = tmse + tbce
+		# Gather output for train and test set
+		spec_prob, spec_pred = spec_model(spec_xtrain)
 		
-		loss.backward()
-		optim.step()
-		optim.zero_grad()
+		# Compute loss
+		spec_loss = Loss(spec_pred, spec_strain, spec_prob, spec_ptrain, spec_stest, spec_ptest, spec_model, spec_xtest, epoch)
+		
+		# Compute derivative, step, and reset
+		spec_loss.backward()
+		spec_optim.step()
+		spec_optim.zero_grad()
+		
+		
 
-		acc = (pred > 0.5).float().mean()
-		tacc = (tpred > 0.5).float().mean()
-		if (epoch+1)%100 == 0:
-			print(f'epoch = {epoch+1}; mse = {mse:.3f}; bce = {bce:.3f}; tmse = {tmse:.3f}; tbce = {tbce:.3f}; acc = {acc:.3f}; test acc = {tacc:.3f}')
+	# Build k-th overall model, train/test set and train
+
+	over_xtrain, over_strain, over_ptrain, over_xtest, over_stest, over_ptest = train_and_test_set(Data, over, groups2, i, k)
+
+	over_model = Model(width)
+	over_optim = torch.optim.Adam(over_model.parameters(), lr = 3e-4)
+
+	print(f'Training Overall Survival Model #{i} ')
+	for epoch in range(epochs):
+
+		# Gather output for train and test set
+		over_prob, over_pred = over_model(over_xtrain)
+
+		# Compute loss
+		over_loss = Loss(over_pred, over_strain, over_prob, over_ptrain, over_stest, over_ptest, over_model, over_xtest, epoch)
+
+		# Compute derivative, step, and reset
+		over_loss.backward()
+		over_optim.step()
+		over_optim.zero_grad()
+
+
+	AUCplot(spec_ptrain, over_ptrain, spec_prob, over_prob, i)
+
 
 
 
