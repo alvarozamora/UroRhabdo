@@ -7,7 +7,7 @@ def SoftClamp(x, n):
     return (torch.min(F.leaky_relu(x, 2/(n/slow+1)), torch.ones_like(x)) - torch.min(F.leaky_relu(1-x, 2/(n/slow+1)), torch.ones_like(x))+1)/2.0
 
 def SoftLeaky(x, n):
-	slow = 1000
+	slow = 10
 	return F.leaky_relu(x, 1/(n/slow+1))
 
 class Model(nn.Module):
@@ -22,7 +22,7 @@ class Model(nn.Module):
 
 		self.trunk = nn.Sequential(
 			nn.Linear(self.features, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			#nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
+			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
 			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
 			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO))
 
@@ -30,13 +30,13 @@ class Model(nn.Module):
 
 		self.pred = nn.Sequential(
 			nn.Linear(2*self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			#nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
+			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
 			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
 			nn.Linear(self.width, 1))
 
 		self.prob = nn.Sequential(
 			nn.Linear(2*self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			#nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
+			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
 			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
 			nn.Linear(self.width, 1))
 

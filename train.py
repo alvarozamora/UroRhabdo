@@ -7,8 +7,8 @@ from utils import *
 
 # Training Parameters
 k = 10				# Groups for k-fold validation
-width = 512			# Width of model
-epochs = 1000		# Training epochs for each fold
+width = 1024		# Width of model
+epochs = 300		# Training epochs for each fold
 
 
 # Loading preprocessed data and splitting
@@ -65,7 +65,7 @@ for i in range(k):
 		over_optim.zero_grad()
 
 
-	AUCplot(spec_ptrain, over_ptrain, spec_prob, over_prob, i)
+	AUCplot(spec_model, over_model, spec_xtest, over_xtest, spec_ptest, over_ptest, k)
 
 
 

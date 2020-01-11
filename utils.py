@@ -25,7 +25,9 @@ def train_and_test_set(data, labels, groups, i, k):
 
 def Loss(pred, strain, prob, ptrain, stest, ptest, model, xtest, epoch):
 
-	mse  = F.mse_loss(pred, strain)/1000
+	mse_scale = 1e5
+
+	mse  = F.mse_loss(pred, strain)/mse_scale
 	bce  = F.binary_cross_entropy(prob, ptrain)
 
 	loss  = mse + bce
@@ -37,7 +39,7 @@ def Loss(pred, strain, prob, ptrain, stest, ptest, model, xtest, epoch):
 		tprob, tpred = model(xtest)
 		model.train() #This turns BatchNorm and Dropout back on
 
-		tmse = F.mse_loss(tpred, stest)/1000
+		tmse = F.mse_loss(tpred, stest)/mse_scale
 		tbce = F.binary_cross_entropy(tprob, ptest)
 		
 		tloss = tmse + tbce
@@ -60,7 +62,14 @@ def AUC(ytrain, ytest, prob, tprob):
 	return AUCtrain, AUCtest
 
 
-def AUCplot(yspec, yover, probspec, probover, k):
+def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, k):
+
+	spec_model.eval() # This turns off BatchNorm and Dropout, as will be done at deployment
+	over_model.eval() # This turns off BatchNorm and Dropout, as will be done at deployment
+	probspec, _ = spec_model(spec_xtest)
+	probover, _ = over_model(over_xtest)
+	spec_model.train() #This turns BatchNorm and Dropout back on
+	over_model.train() #This turns BatchNorm and Dropout back on
 
 	fpr_spec, tpr_spec, thresholds_spec = roc_curve(yspec.data.numpy(), probspec.data.numpy())
 	fpr_over, tpr_over, thresholds_over = roc_curve(yover.data.numpy(), probover.data.numpy())
