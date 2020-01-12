@@ -30,15 +30,15 @@ class Model(nn.Module):
 
 		self.pred = nn.Sequential(
 			nn.Linear(2*self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			nn.Linear(self.width, 1))
+			nn.Linear(self.width, self.width//2), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width//2), nn.Dropout(self.DO),
+			nn.Linear(self.width//2, self.width//4), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width//4),
+			nn.Linear(self.width//4, 1))
 
 		self.prob = nn.Sequential(
 			nn.Linear(2*self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			nn.Linear(self.width, 1))
+			nn.Linear(self.width, self.width//2), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width//2), nn.Dropout(self.DO),
+			nn.Linear(self.width//2, self.width//4), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width//4),
+			nn.Linear(self.width//4, 1))
 
 		self.width *= 2
 
