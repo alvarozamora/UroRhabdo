@@ -10,6 +10,8 @@ def SoftLeaky(x, n):
 	slow = 10
 	return F.leaky_relu(x, 1/(n/slow+1))
 
+
+
 class Model(nn.Module):
 
 	def __init__(self, width, features = 9):
@@ -47,9 +49,17 @@ class Model(nn.Module):
 		x = self.trunk(x)
 
 		#prob = SoftClamp(self.prob(x), self.iter)
-		prob = torch.sigmoid(self.prob(x))
-		pred = SoftLeaky(self.pred(x), self.iter)
+		#prob = torch.sigmoid(self.prob(x))[:,0]
+		prob = self.prob(x)[:,0].clamp(0,1)
+		pred = SoftLeaky(self.pred(x), self.iter)[:,0]
 
 		self.iter += 1
 
-		return prob[:,0], pred[:,0]
+		return prob, pred
+
+
+	def L1_Loss(self):
+		L1_loss = 0
+		for param in self.parameters():
+			L1_loss += torch.sum(torch.abs(param))
+		return L1_loss
