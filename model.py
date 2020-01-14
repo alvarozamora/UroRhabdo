@@ -49,8 +49,8 @@ class Model(nn.Module):
 		x = self.trunk(x)
 
 		#prob = SoftClamp(self.prob(x), self.iter)
-		#prob = torch.sigmoid(self.prob(x))[:,0]
-		prob = self.prob(x)[:,0].clamp(0,1)
+		prob = torch.sigmoid(self.prob(x))[:,0]
+		#prob = self.prob(x)[:,0].clamp(0,1)
 		pred = SoftLeaky(self.pred(x), self.iter)[:,0]
 
 		self.iter += 1

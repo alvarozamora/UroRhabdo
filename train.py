@@ -2,20 +2,18 @@ import torch
 import pdb
 import copy
 import numpy as np
+from LSUV import LSUVinit
 from model import *
 from utils import *
 
 
-
 # Training Parameters
-k = 5				# Groups for k-fold validation
-width = 512 		# Width of model
-epochs = 5000		# Training epochs for each fold
-L2 = 1e-3
-L1 = 1e-3
-
-#width = 128 		# Width of model
-#epochs = 1000		# Training epochs for each fold
+k = 3				# Groups for k-fold validation
+width = 128			# Width of model
+epochs = 4000		# Training epochs for each fold
+L2 = 1e-3			# L2 Regularization
+L1 = 1e-3			# L1 Regularization
+LR = 1e-3			# Learning Rate
 
 # Loading preprocessed data and splitting
 Data = np.load("Data.npz")
@@ -30,22 +28,35 @@ spec_cals = []
 over_rocs = []
 over_cals = []
 
+model = Model(width)
+
 # K-fold validation
 for i in range(k):
 
-	# Build k-th models
-	spec_model = Model(width)
-	spec_optim = torch.optim.Adam(spec_model.parameters(), lr = 3e-4, weight_decay = L1)
-	over_model = copy.deepcopy(spec_model)
-	over_optim = torch.optim.Adam(over_model.parameters(), lr = 3e-4, weight_decay = L1)
+	# Build models
+	#spec_model = Model(width)
+	
 
 	# Build Specific train/test set
 	spec_xtrain, spec_strain, spec_ptrain, spec_xtest, spec_stest, spec_ptest = train_and_test_set(Data, spec, groups1, i, k)
 	best_spec = 0
-LD_FLAGS=-lpmi2 USE_CUDA=0 USE_OPENMP=1 USE_GASNET=1 USE_HDF=1 CC=gcc CXX=g++ MAX_DIM=8 ./scripts/setup_env.py --llvm-version 60s
 
 	print(f'Training Disease Specific Survival Model #{i} ')
 	for epoch in range(epochs):
+
+		if epoch == 0 and i == 0:
+			model = LSUVinit(model, spec_xtrain, needed_std = 1.0)
+			spec_model = copy.deepcopy(model)
+			over_model = copy.deepcopy(model)
+			spec_optim = torch.optim.Adam(spec_model.parameters(), lr = LR, weight_decay = L1)
+			over_optim = torch.optim.Adam(over_model.parameters(), lr = LR, weight_decay = L1)
+		elif epoch == 0:
+			spec_model = copy.deepcopy(model)
+			spec_optim = torch.optim.Adam(spec_model.parameters(), lr = LR, weight_decay = L1)
+			over_model = copy.deepcopy(model)
+			over_optim = torch.optim.Adam(over_model.parameters(), lr = LR, weight_decay = L1)
+
+
 
 		# Gather output for train and test set
 		spec_prob, spec_pred = spec_model(spec_xtrain)
@@ -62,8 +73,7 @@ LD_FLAGS=-lpmi2 USE_CUDA=0 USE_OPENMP=1 USE_GASNET=1 USE_HDF=1 CC=gcc CXX=g++ MA
 		spec_optim.step()
 		spec_optim.zero_grad()
 	print(f'Best Specific Model has test AUC = {best_spec:.3f}')
-		
-		
+	
 
 	# Build Overall train/test set and train
 
@@ -74,6 +84,7 @@ LD_FLAGS=-lpmi2 USE_CUDA=0 USE_OPENMP=1 USE_GASNET=1 USE_HDF=1 CC=gcc CXX=g++ MA
 
 	print(f'Training Overall Survival Model #{i}')
 	for epoch in range(epochs):
+
 
 		# Gather output for train and test set
 		over_prob, over_pred = over_model(over_xtrain)
