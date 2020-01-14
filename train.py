@@ -42,7 +42,7 @@ for i in range(k):
 	# Build Specific train/test set
 	spec_xtrain, spec_strain, spec_ptrain, spec_xtest, spec_stest, spec_ptest = train_and_test_set(Data, spec, groups1, i, k)
 	best_spec = 0
-
+LD_FLAGS=-lpmi2 USE_CUDA=0 USE_OPENMP=1 USE_GASNET=1 USE_HDF=1 CC=gcc CXX=g++ MAX_DIM=8 ./scripts/setup_env.py --llvm-version 60s
 
 	print(f'Training Disease Specific Survival Model #{i} ')
 	for epoch in range(epochs):

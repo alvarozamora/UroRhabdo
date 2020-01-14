@@ -84,7 +84,7 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 	over_rocs.append([fpr_over, tpr_over])
 
 	# Generate Calibration Curves
-	N = 4
+	N = 10
 	spec_cal  = calibration_curve(yspec.data.numpy(), probspec.data.numpy(), n_bins=N)
 	over_cal  = calibration_curve(yspec.data.numpy(), probspec.data.numpy(), n_bins=N)
 	assert((len(spec_cal[1])==N) and (len(over_cal[1])==N))
