@@ -43,7 +43,7 @@ def Loss(pred, strain, prob, ptrain, stest, ptest, model, xtest, epoch, best, L1
 	mse  = F.mse_loss(pred, strain)/mse_scale
 	bce  = F.binary_cross_entropy(prob, ptrain)
 
-	loss  = mse + bce + L1*model.L1_Loss()
+	loss  = 10*mse + bce/10 + L1*model.L1_Loss()
 
 	#Evaluate
 	if (epoch+1)%1 == 0:
@@ -94,15 +94,9 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 	# Generate Calibration Curves
 	N = 4
 	strategy = 'uniform'
-<<<<<<< HEAD
 	spec_cal  = calibration_curve(yspec.data.cpu().numpy(), probspec.data.cpu().numpy(), n_bins=N, strategy=strategy)
-	over_cal  = calibration_curve(yspec.data.cpu().numpy(), probspec.data.cpu().numpy(), n_bins=N, strategy=strategy)
-	assert ((len(spec_cal[1])==N) and (len(over_cal[1])==N)), f'len is {len(spec_cal[1])}, {len(over_cal[1])} not {N}'
-=======
-	spec_cal  = calibration_curve(yspec.data.numpy(), probspec.data.numpy(), n_bins=N, strategy=strategy)
-	over_cal  = calibration_curve(yspec.data.numpy(), probspec.data.numpy(), n_bins=N, strategy=strategy)
+	over_cal  = calibration_curve(yover.data.cpu().numpy(), probover.data.cpu().numpy(), n_bins=N, strategy=strategy)
 	#URGENT assert ((len(spec_cal[1])==N) and (len(over_cal[1])==N)), f'len is {len(spec_cal[1])}, {len(over_cal[1])} not {N}'
->>>>>>> bc8c156d3783e7d3a0ab4005ad419d9dbdff5627
 	spec_cals.append(spec_cal)
 	over_cals.append(over_cal)
 
@@ -134,9 +128,9 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		mean_spec_roc = []
 
 		for ROC in spec_rocs:
-   			 mean_spec_tpr = interp(mean_fpr, ROC[0], ROC[1])
-   			 mean_spec_tpr[0] = 0.0
-   			 mean_spec_roc.append(mean_spec_tpr)
+			 mean_spec_tpr = interp(mean_fpr, ROC[0], ROC[1])
+			 mean_spec_tpr[0] = 0.0
+			 mean_spec_roc.append(mean_spec_tpr)
 
 		mean_spec_roc = np.array(mean_spec_roc)
 
@@ -171,9 +165,9 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		mean_over_roc = []
 
 		for ROC in over_rocs:
-   			 mean_over_tpr = interp(mean_fpr, ROC[0], ROC[1])
-   			 mean_over_tpr[0] = 0.0
-   			 mean_over_roc.append(mean_over_tpr)
+			 mean_over_tpr = interp(mean_fpr, ROC[0], ROC[1])
+			 mean_over_tpr[0] = 0.0
+			 mean_over_roc.append(mean_over_tpr)
 
 		mean_over_roc = np.array(mean_over_roc)
 		std_tpr = np.std(mean_over_roc, axis=0)
@@ -215,19 +209,15 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 
 
 		# Calibration Plot
-<<<<<<< HEAD
-# Calibration Plot
-=======
->>>>>>> bc8c156d3783e7d3a0ab4005ad419d9dbdff5627
 		both_calfig, both_calax = plt.subplots()
 		mean_spec_cal = []
 		mean_over_cal = []
 		for CAL in spec_cals:
-   			 interp_spec_cal = interp(mean_fpr, CAL[1], CAL[0])
-   			 mean_spec_cal.append(interp_spec_cal)
+			 interp_spec_cal = interp(mean_fpr, CAL[1], CAL[0])
+			 mean_spec_cal.append(interp_spec_cal)
 
-   		std_spec_cal = np.std(np.array(mean_spec_cal), axis=0)
-		mean_spec_cal = np.mean(np.array(mean_specs_cal), axis=0)
+		std_spec_cal = np.std(np.array(mean_spec_cal), axis=0)
+		mean_spec_cal = np.mean(np.array(mean_spec_cal), axis=0)
 		spec_top = np.minimum(mean_spec_cal + std_spec_cal, 1)
 		spec_bot = np.maximum(mean_spec_cal - std_spec_cal, 0)
 		spec_mbs = [np.polyfit(CAL[1], CAL[0], 1) for CAL in spec_cals]
@@ -238,12 +228,15 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		spec_m_mean = np.mean(spec_ms)
 		spec_b_mean = np.mean(spec_bs)
 
-		for CAL in over_cals:
-   			 interp_over_cal = interp(mean_fpr, CAL[1], CAL[0])
-   			 mean_over_cal.append(interp_over_cal)
+		both_calax.plot(mean_fpr, mean_spec_cal, label = 'Specific', color = 'C0')
+		both_calax.fill_between(mean_fpr, spec_bot, spec_top, color='C0', alpha=.1)#, label=f'$\pm$ 1 DSS std')
 
-   		std_over_cal = np.std(np.array(mean_over_cal), axis=0)
-		mean_over_cal = np.mean(np.array(mean_overs_cal), axis=0)
+		for CAL in over_cals:
+			 interp_over_cal = interp(mean_fpr, CAL[1], CAL[0])
+			 mean_over_cal.append(interp_over_cal)
+
+		std_over_cal = np.std(np.array(mean_over_cal), axis=0)
+		mean_over_cal = np.mean(np.array(mean_over_cal), axis=0)
 		over_top = np.minimum(mean_over_cal + std_over_cal, 1)
 		over_bot = np.maximum(mean_over_cal - std_over_cal, 0)
 		over_mbs = [np.polyfit(CAL[1], CAL[0], 1) for CAL in over_cals]
@@ -254,10 +247,10 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		over_m_mean = np.mean(over_ms)
 		over_b_mean = np.mean(over_bs)
 
-		both_calax.plot(mean_fpr, mean_spec_cal)
-		both_calax.fill_between(mean_fpr, spec_bot, spec_top, legend = 'Specific', color='C0', alpha=.1)#, label=f'$\pm$ 1 DSS std')
-		both_calax.plot(mean_fpr, mean_over_cal)
-		both_calax.fill_between(mean_fpr, over_bot, over_top, legend = 'Overall', color='C0', alpha=.1)#, label=f'$\pm$ 1 DSS std')
+		print(np.abs(mean_over_cal-mean_spec_cal).mean())
+
+		both_calax.plot(mean_fpr, mean_over_cal, label = 'Overall', color = 'C1')
+		both_calax.fill_between(mean_fpr, over_bot, over_top, color='C1', alpha=.1)#, label=f'$\pm$ 1 DSS std')
 		both_calax.plot([0, 1], [0, 1], 'r--')
 		both_calax.grid(alpha=0.2)
 		both_calax.legend(loc=4)

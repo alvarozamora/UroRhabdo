@@ -8,9 +8,9 @@ from utils import *
 
 
 # Training Parameters
-k = 3				# Groups for k-fold validation
-width = 128			# Width of model
-epochs = 4000		# Training epochs for each fold
+k = 5				# Groups for k-fold validation
+width = 512			# Width of model
+epochs = 4000			# Training epochs for each fold
 L2 = 1e-3			# L2 Regularization
 L1 = 1e-3			# L1 Regularization
 LR = 1e-3			# Learning Rate
@@ -28,7 +28,8 @@ spec_cals = []
 over_rocs = []
 over_cals = []
 
-model = Model(width)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = Model(width).to(device)
 
 # K-fold validation
 for i in range(k):
@@ -38,14 +39,14 @@ for i in range(k):
 	
 
 	# Build Specific train/test set
-	spec_xtrain, spec_strain, spec_ptrain, spec_xtest, spec_stest, spec_ptest = train_and_test_set(Data, spec, groups1, i, k)
+	spec_xtrain, spec_strain, spec_ptrain, spec_xtest, spec_stest, spec_ptest = train_and_test_set(Data, spec, groups1, i, k, device)
 	best_spec = 0
 
 	print(f'Training Disease Specific Survival Model #{i} ')
 	for epoch in range(epochs):
 
 		if epoch == 0 and i == 0:
-			model = LSUVinit(model, spec_xtrain, needed_std = 1.0)
+			model = LSUVinit(model, spec_xtrain, needed_std = 1.0, cuda = True)
 			spec_model = copy.deepcopy(model)
 			over_model = copy.deepcopy(model)
 			spec_optim = torch.optim.Adam(spec_model.parameters(), lr = LR, weight_decay = L1)
@@ -77,7 +78,7 @@ for i in range(k):
 
 	# Build Overall train/test set and train
 
-	over_xtrain, over_strain, over_ptrain, over_xtest, over_stest, over_ptest = train_and_test_set(Data, over, groups2, i, k)
+	over_xtrain, over_strain, over_ptrain, over_xtest, over_stest, over_ptest = train_and_test_set(Data, over, groups2, i, k, device)
 
 	#over_model = Model(width)
 	best_over = 0
