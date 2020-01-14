@@ -3,6 +3,8 @@ import torch
 import numpy as np
 from scipy import interp
 import torch.nn.functional as F
+import matplotlib
+matplotlib.use("agg")
 import matplotlib.pyplot as plt
 from scipy.integrate import trapz
 from sklearn.calibration import calibration_curve
@@ -10,7 +12,7 @@ from sklearn.metrics import roc_curve, roc_auc_score
 
 
 
-def train_and_test_set(data, labels, groups, i, k):
+def train_and_test_set(data, labels, groups, i, k, device):
 
 	# Specific
 	spec_xtrain = torch.Tensor([])
@@ -26,6 +28,12 @@ def train_and_test_set(data, labels, groups, i, k):
 			spec_stest = labels[groups[j],0]
 			spec_ptest = labels[groups[j],1]
 
+	spec_xtrain = spec_xtrain.to(device)
+	spec_strain = spec_strain.to(device)
+	spec_ptrain = spec_ptrain.to(device)
+	spec_xtest = spec_xtest.to(device)
+	spec_stest = spec_stest.to(device)
+	spec_ptest = spec_ptest.to(device)
 	return spec_xtrain, spec_strain, spec_ptrain, spec_xtest, spec_stest, spec_ptest
 
 def Loss(pred, strain, prob, ptrain, stest, ptest, model, xtest, epoch, best, L1):
@@ -52,7 +60,7 @@ def Loss(pred, strain, prob, ptrain, stest, ptest, model, xtest, epoch, best, L1
 		acc = (pred > 0.5).float().mean()
 		tacc = (tpred > 0.5).float().mean()
 
-		auc, tauc = AUC(ptrain.data.numpy(), ptest.data.numpy(), prob.data.numpy(), tprob.data.numpy())
+		auc, tauc = AUC(ptrain.data.cpu().numpy(), ptest.data.cpu().numpy(), prob.data.cpu().numpy(), tprob.data.cpu().numpy())
 
 	if (epoch+1)%100 == 0:
 		print(f'epoch = {epoch+1}; mse = {mse:.3f}; bce = {bce:.3f}; tmse = {tmse:.3f}; tbce = {tbce:.3f}; acc = {acc:.3f}; test acc = {tacc:.3f}; AUC = {auc:.4f}; test AUC = {tauc:.4f}, best test AUC = {best:.3f}')
@@ -78,23 +86,23 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 	over_model.train() #This turns BatchNorm and Dropout back on
 
 	# Generate ROC Curves
-	fpr_spec, tpr_spec, thresholds_spec = roc_curve(yspec.data.numpy(), probspec.data.numpy())
-	fpr_over, tpr_over, thresholds_over = roc_curve(yover.data.numpy(), probover.data.numpy())
+	fpr_spec, tpr_spec, thresholds_spec = roc_curve(yspec.data.cpu().numpy(), probspec.data.cpu().numpy())
+	fpr_over, tpr_over, thresholds_over = roc_curve(yover.data.cpu().numpy(), probover.data.cpu().numpy())
 	spec_rocs.append([fpr_spec, tpr_spec])
 	over_rocs.append([fpr_over, tpr_over])
 
 	# Generate Calibration Curves
 	N = 4
 	strategy = 'uniform'
-	spec_cal  = calibration_curve(yspec.data.numpy(), probspec.data.numpy(), n_bins=N, strategy=strategy)
-	over_cal  = calibration_curve(yspec.data.numpy(), probspec.data.numpy(), n_bins=N, strategy=strategy)
+	spec_cal  = calibration_curve(yspec.data.cpu().numpy(), probspec.data.cpu().numpy(), n_bins=N, strategy=strategy)
+	over_cal  = calibration_curve(yspec.data.cpu().numpy(), probspec.data.cpu().numpy(), n_bins=N, strategy=strategy)
 	assert ((len(spec_cal[1])==N) and (len(over_cal[1])==N)), f'len is {len(spec_cal[1])}, {len(over_cal[1])} not {N}'
 	spec_cals.append(spec_cal)
 	over_cals.append(over_cal)
 
 	# Compute AUC Scores
-	AUCspec = roc_auc_score(yspec.data.numpy(), probspec.data.numpy())
-	AUCover = roc_auc_score(yover.data.numpy(), probover.data.numpy())
+	AUCspec = roc_auc_score(yspec.data.cpu().numpy(), probspec.data.cpu().numpy())
+	AUCover = roc_auc_score(yover.data.cpu().numpy(), probover.data.cpu().numpy())
 
 
 	# Plot k-th Model Performance (ROC)
@@ -201,13 +209,19 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 
 
 		# Calibration Plot
-		pdb.set_trace()
+# Calibration Plot
 		both_calfig, both_calax = plt.subplots()
-		mean_spec_cal = np.mean([CAL[0] for CAL in spec_cals], axis=0)
-		std_spec_cal = np.std([CAL[0] for CAL in spec_cals], axis=0)
+		mean_spec_cal = []
+		mean_over_cal = []
+		for CAL in spec_cals:
+   			 interp_spec_cal = interp(mean_fpr, CAL[1], CAL[0])
+   			 mean_spec_cal.append(interp_spec_cal)
+
+   		std_spec_cal = np.std(np.array(mean_spec_cal), axis=0)
+		mean_spec_cal = np.mean(np.array(mean_specs_cal), axis=0)
 		spec_top = np.minimum(mean_spec_cal + std_spec_cal, 1)
 		spec_bot = np.maximum(mean_spec_cal - std_spec_cal, 0)
-		spec_mbs = [np.polyfit(CAL[0], CAL[1], 1) for CAL in spec_cals]
+		spec_mbs = [np.polyfit(CAL[1], CAL[0], 1) for CAL in spec_cals]
 		spec_ms = [m[0] for m in spec_mbs]
 		spec_bs = [b[1] for b in spec_mbs]
 		spec_m_std = np.std(spec_ms)
@@ -215,8 +229,26 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		spec_m_mean = np.mean(spec_ms)
 		spec_b_mean = np.mean(spec_bs)
 
-		both_calax.plot(spec_cals[0][1], mean_spec_cal)
-		both_calax.fill_between(spec_cals[0][1], spec_bot, spec_top, color='C0', alpha=.1)#, label=f'$\pm$ 1 DSS std')
+		for CAL in over_cals:
+   			 interp_over_cal = interp(mean_fpr, CAL[1], CAL[0])
+   			 mean_over_cal.append(interp_over_cal)
+
+   		std_over_cal = np.std(np.array(mean_over_cal), axis=0)
+		mean_over_cal = np.mean(np.array(mean_overs_cal), axis=0)
+		over_top = np.minimum(mean_over_cal + std_over_cal, 1)
+		over_bot = np.maximum(mean_over_cal - std_over_cal, 0)
+		over_mbs = [np.polyfit(CAL[1], CAL[0], 1) for CAL in over_cals]
+		over_ms = [m[0] for m in over_mbs]
+		over_bs = [b[1] for b in over_mbs]
+		over_m_std = np.std(over_ms)
+		over_b_std = np.std(over_bs)
+		over_m_mean = np.mean(over_ms)
+		over_b_mean = np.mean(over_bs)
+
+		both_calax.plot(mean_fpr, mean_spec_cal)
+		both_calax.fill_between(mean_fpr, spec_bot, spec_top, legend = 'Specific', color='C0', alpha=.1)#, label=f'$\pm$ 1 DSS std')
+		both_calax.plot(mean_fpr, mean_over_cal)
+		both_calax.fill_between(mean_fpr, over_bot, over_top, legend = 'Overall', color='C0', alpha=.1)#, label=f'$\pm$ 1 DSS std')
 		both_calax.plot([0, 1], [0, 1], 'r--')
 		both_calax.grid(alpha=0.2)
 		both_calax.legend(loc=4)
@@ -224,32 +256,6 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		both_calax.set_ylabel('Observed Population')
 		both_calax.title.set_text("Calibration Curve")
 		plt.savefig("BothCalibration.png", dpi=230)
-
-		#for CAL in spec_cals:
-   		#	 mean_spec_cal = interp(mean_fpr, ROC[0], ROC[1])
-   		#	 mean_spec_tpr[0] = 0.0
-   		#	 mean_spec_roc.append(mean_over_tpr)
-
-		#mean_over_roc = np.array(mean_over_roc)
-		#std_tpr = np.std(mean_over_roc, axis=0)
-		#mean_over_roc = np.mean(mean_over_roc, axis=0)
-		#mean_over_roc[-1] = 1.0
-
-
-
-		over_top = np.minimum(mean_over_roc + std_tpr, 1) 
-		over_bot = np.maximum(mean_over_roc - std_tpr, 0) 
-
-		
-		mean_auc = trapz(mean_over_roc, mean_fpr)
-		aucs = [trapz(ROC[1], ROC[0]) for ROC in spec_rocs]
-		std_auc = np.std(aucs)
-		
-
-
-
-		
-
 
 
 	print(f'\n\nGenerated Specific vs Overall ROC plot for test set #{k} using lastest models in ./ROCs/\n\n')
