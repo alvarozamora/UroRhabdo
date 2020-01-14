@@ -142,14 +142,14 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		#pdb.set_trace()
 		#pdb.set_trace()
 		
-		mean_auc = trapz(mean_spec_roc, mean_fpr)
+		spec_mean_auc = trapz(mean_spec_roc, mean_fpr)
 		aucs = [trapz(ROC[1], ROC[0]) for ROC in spec_rocs]
-		std_auc = np.std(aucs)
+		spec_std_auc = np.std(aucs)
 
 		spec_fig, spec_ax = plt.subplots()
 		
 
-		spec_ax.plot(mean_fpr, mean_spec_roc, color ='C0', label=f'Mean ROC, AUC = {mean_auc:.2f} $\pm$ {std_auc:.2f})')
+		spec_ax.plot(mean_fpr, mean_spec_roc, color ='C0', label=f'Mean ROC, AUC = {spec_mean_auc:.2f} $\pm$ {spec_std_auc:.2f})')
 		for ROC in spec_rocs:
 			spec_ax.plot(ROC[0], ROC[1], alpha=0.2)
 		spec_ax.fill_between(mean_fpr, spec_bot, spec_top, color='C0', alpha=.1, label=f'$\pm$ 1 std')
@@ -177,12 +177,12 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		over_bot = np.maximum(mean_over_roc - std_tpr, 0) 
 
 		
-		mean_auc = trapz(mean_over_roc, mean_fpr)
+		over_mean_auc = trapz(mean_over_roc, mean_fpr)
 		aucs = [trapz(ROC[1], ROC[0]) for ROC in spec_rocs]
-		std_auc = np.std(aucs)
+		over_std_auc = np.std(aucs)
 
 		over_fig, over_ax = plt.subplots()
-		over_ax.plot(mean_fpr, mean_over_roc, color ='C0', label=f'Mean ROC, AUC = {mean_auc:.2f} $\pm$ {std_auc:.2f})')
+		over_ax.plot(mean_fpr, mean_over_roc, color ='C0', label=f'Mean ROC, AUC = {over_mean_auc:.2f} $\pm$ {over_std_auc:.2f})')
 		for ROC in over_rocs:
 			over_ax.plot(ROC[0], ROC[1], alpha=0.2)
 		over_ax.fill_between(mean_fpr, over_bot, over_top, color='C0', alpha=.1, label=f'$\pm$ 1 std')
@@ -194,9 +194,9 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		plt.savefig('Overall_Mean_ROC.png', dpi = 230)
 
 		both_fig, both_ax = plt.subplots()
-		both_ax.plot(mean_fpr, mean_spec_roc, color ='C0', label=f'DSS AUC = {mean_auc:.2f} $\pm$ {std_auc:.2f})')
+		both_ax.plot(mean_fpr, mean_spec_roc, color ='C0', label=f'DSS AUC = {spec_mean_auc:.2f} $\pm$ {spec_std_auc:.2f})')
 		both_ax.fill_between(mean_fpr, spec_bot, spec_top, color='C0', alpha=.1)#, label=f'$\pm$ 1 DSS std')
-		both_ax.plot(mean_fpr, mean_over_roc, color ='C1', label=f'Overall AUC = {mean_auc:.2f} $\pm$ {std_auc:.2f})')
+		both_ax.plot(mean_fpr, mean_over_roc, color ='C1', label=f'Overall AUC = {over_mean_auc:.2f} $\pm$ {over_std_auc:.2f})')
 		both_ax.fill_between(mean_fpr, over_bot, over_top, color='C1', alpha=.1)# label=f'$\pm$ 1 OVR std')
 		both_ax.grid(alpha=0.2)
 		both_ax.legend(loc=4)
