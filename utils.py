@@ -94,9 +94,15 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 	# Generate Calibration Curves
 	N = 4
 	strategy = 'uniform'
+<<<<<<< HEAD
 	spec_cal  = calibration_curve(yspec.data.cpu().numpy(), probspec.data.cpu().numpy(), n_bins=N, strategy=strategy)
 	over_cal  = calibration_curve(yspec.data.cpu().numpy(), probspec.data.cpu().numpy(), n_bins=N, strategy=strategy)
 	assert ((len(spec_cal[1])==N) and (len(over_cal[1])==N)), f'len is {len(spec_cal[1])}, {len(over_cal[1])} not {N}'
+=======
+	spec_cal  = calibration_curve(yspec.data.numpy(), probspec.data.numpy(), n_bins=N, strategy=strategy)
+	over_cal  = calibration_curve(yspec.data.numpy(), probspec.data.numpy(), n_bins=N, strategy=strategy)
+	#URGENT assert ((len(spec_cal[1])==N) and (len(over_cal[1])==N)), f'len is {len(spec_cal[1])}, {len(over_cal[1])} not {N}'
+>>>>>>> bc8c156d3783e7d3a0ab4005ad419d9dbdff5627
 	spec_cals.append(spec_cal)
 	over_cals.append(over_cal)
 
@@ -209,7 +215,10 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 
 
 		# Calibration Plot
+<<<<<<< HEAD
 # Calibration Plot
+=======
+>>>>>>> bc8c156d3783e7d3a0ab4005ad419d9dbdff5627
 		both_calfig, both_calax = plt.subplots()
 		mean_spec_cal = []
 		mean_over_cal = []
