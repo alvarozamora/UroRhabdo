@@ -92,13 +92,16 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 	over_rocs.append([fpr_over, tpr_over])
 
 	# Generate Calibration Curves
-	N = 4
+	N = 10
 	strategy = 'uniform'
-	spec_cal  = calibration_curve(yspec.data.cpu().numpy(), probspec.data.cpu().numpy(), n_bins=N, strategy=strategy)
-	over_cal  = calibration_curve(yover.data.cpu().numpy(), probover.data.cpu().numpy(), n_bins=N, strategy=strategy)
-	#URGENT assert ((len(spec_cal[1])==N) and (len(over_cal[1])==N)), f'len is {len(spec_cal[1])}, {len(over_cal[1])} not {N}'
-	spec_cals.append(spec_cal)
-	over_cals.append(over_cal)
+	# These 4 lines are required to create the K calibration curves and find the mean w/ the +/-1 std region
+	#spec_cal  = calibration_curve(yspec.data.cpu().numpy(), probspec.data.cpu().numpy(), n_bins=N, strategy=strategy)
+	#over_cal  = calibration_curve(yover.data.cpu().numpy(), probover.data.cpu().numpy(), n_bins=N, strategy=strategy)
+	#spec_cals.append(spec_cal)
+	#over_cals.append(over_cal)
+	# These 2 lines are required to create the single calibration curve comprised from all datapoints
+	spec_cals.append([yspec.data.cpu().numpy(), probspec.data.cpu().numpy()])
+	over_cals.append([yover.data.cpu().numpy(), probover.data.cpu().numpy()])
 
 	# Compute AUC Scores
 	AUCspec = roc_auc_score(yspec.data.cpu().numpy(), probspec.data.cpu().numpy())
@@ -210,6 +213,11 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 
 		# Calibration Plot
 		both_calfig, both_calax = plt.subplots()
+
+		'''
+		# This creates K calibration plots, and computes the mean (interpolated) with a +/- 1 std region
+
+		both_calfig, both_calax = plt.subplots()
 		mean_spec_cal = []
 		mean_over_cal = []
 		for CAL in spec_cals:
@@ -258,6 +266,31 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		both_calax.set_ylabel('Observed Population')
 		both_calax.title.set_text("Calibration Curve")
 		plt.savefig("BothCalibration.png", dpi=230)
+		'''
+
+		#pdb.set_trace()
+		y_spec = np.concatenate([cal[0] for cal in spec_cals])
+		p_spec = np.concatenate([cal[1] for cal in spec_cals])
+		y_over = np.concatenate([cal[0] for cal in over_cals])
+		p_over = np.concatenate([cal[1] for cal in over_cals])
+
+		
+		spec = calibration_curve(y_spec, p_spec, n_bins=N, strategy=strategy)
+		over = calibration_curve(y_over, p_over, n_bins=N, strategy=strategy)
+
+		both_calax.plot(spec[1], spec[0], label='DSS', color='C0')
+		both_calax.plot(over[1], over[0], label='OS', color='C1')
+		both_calax.plot([0, 1], [0, 1], 'r--')
+		both_calax.grid(alpha=0.2)
+		both_calax.legend(loc=4)
+		both_calax.set_xlabel('Predicted Probability')
+		both_calax.set_ylabel('Observed Population')
+		both_calax.title.set_text("Calibration Curve")
+		plt.savefig("BothCalibration.png", dpi=230)
+
+
+
+
 
 
 	print(f'\n\nGenerated Specific vs Overall ROC plot for test set #{k} using lastest models in ./ROCs/\n\n')

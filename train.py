@@ -9,8 +9,8 @@ from utils import *
 
 # Training Parameters
 k = 5				# Groups for k-fold validation
-width = 512			# Width of model
-epochs = 4000			# Training epochs for each fold
+width = 256			# Width of model
+epochs = 3000		# Training epochs for each fold
 L2 = 1e-3			# L2 Regularization
 L1 = 1e-3			# L1 Regularization
 LR = 1e-3			# Learning Rate
@@ -49,13 +49,13 @@ for i in range(k):
 			model = LSUVinit(model, spec_xtrain, needed_std = 1.0, cuda = True)
 			spec_model = copy.deepcopy(model)
 			over_model = copy.deepcopy(model)
-			spec_optim = torch.optim.Adam(spec_model.parameters(), lr = LR, weight_decay = L1)
-			over_optim = torch.optim.Adam(over_model.parameters(), lr = LR, weight_decay = L1)
+			spec_optim = torch.optim.Adam(spec_model.parameters(), lr = LR, weight_decay = L2)
+			over_optim = torch.optim.Adam(over_model.parameters(), lr = LR, weight_decay = L2)
 		elif epoch == 0:
 			spec_model = copy.deepcopy(model)
-			spec_optim = torch.optim.Adam(spec_model.parameters(), lr = LR, weight_decay = L1)
 			over_model = copy.deepcopy(model)
-			over_optim = torch.optim.Adam(over_model.parameters(), lr = LR, weight_decay = L1)
+			spec_optim = torch.optim.Adam(spec_model.parameters(), lr = LR, weight_decay = L2)
+			over_optim = torch.optim.Adam(over_model.parameters(), lr = LR, weight_decay = L2)
 
 
 
