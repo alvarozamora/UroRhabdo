@@ -15,7 +15,7 @@ import tensorflow.keras.backend as KB
 k = 5				# Groups for k-fold validation
 width = 256		# Width of model
 depth = 8			# Depth of model
-epochs = 100		# Training epochs for each fold
+epochs = 5000		# Training epochs for each fold
 L2 = 1e-4			# L2 Regularization
 L1 = 1e-4			# L1 Regularization
 LR = 3e-4			# Learning Rate
@@ -171,7 +171,7 @@ for i in range(len(final_overs)):
 	over_model_k.save(f'Final_OS_{i:03d}.h5')
 	torch.save(final_specs[i], f'Final_OS_{i:03d}.pth')
 
-pdb.set_trace()
+#pdb.set_trace()
 spec_input = Input(shape=(9,))
 spec_output = KB.mean(KB.concatenate([spec(spec_input) for spec in k_spec], axis=0), axis=0)
 
