@@ -57,8 +57,8 @@ def Loss(pred, strain, prob, ptrain, stest, ptest, model, xtest, epoch, best, L1
 		
 		tloss = tmse + tbce
 
-		acc = (pred > 0.5).float().mean()
-		tacc = (tpred > 0.5).float().mean()
+		acc = ( ((pred > 0.5) & (ptrain == 1)) | ((pred < 0.5) & (ptrain == 0))).float().mean()
+		tacc = (((tpred > 0.5) & (ptest == 1)) | ((tpred < 0.5) & (ptest == 0))).float().mean()
 
 		auc, tauc = AUC(ptrain.data.cpu().numpy(), ptest.data.cpu().numpy(), prob.data.cpu().numpy(), tprob.data.cpu().numpy())
 

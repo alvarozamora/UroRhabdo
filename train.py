@@ -38,6 +38,7 @@ while spec_check:
 	for i in range(k):
 		spec_xtrain, spec_strain, spec_ptrain, spec_xtest, spec_stest, spec_ptest = train_and_test_set(Data, spec, groups1, i, k, device)
 	
+		print(f'Specific fraction of positives: fold {i}; train {spec_ptrain.sum()/len(spec_ptrain):.3f}; test {spec_ptest.sum()/len(spec_ptest):.3f}')
 		if spec_ptrain.sum() == len(spec_ptrain) or spec_ptest.sum() == len(spec_ptest):
 			print(f'One Class Set (Specific, k = {i})')
 			groups1 = torch.chunk(torch.randperm(len(IDs)), k)
@@ -50,6 +51,7 @@ while over_check:
 	for i in range(k):
 		over_xtrain, over_strain, over_ptrain, over_xtest, over_stest, over_ptest = train_and_test_set(Data, over, groups1, i, k, device)
 	
+		print(f'Overall fraction of positives: fold {i}; train {over_ptrain.sum()/len(over_ptrain):.3f}; test {over_ptest.sum()/len(over_ptest):.3f}')
 		if over_ptrain.sum() == len(over_ptrain) or over_ptest.sum() == len(over_ptest):
 			print(f'One Class Set (Overall, k = {i})')
 			groups1 = torch.chunk(torch.randperm(len(IDs)), k)
