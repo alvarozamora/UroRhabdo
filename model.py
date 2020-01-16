@@ -1,3 +1,4 @@
+import pdb
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -14,35 +15,38 @@ def SoftLeaky(x, n):
 
 class Model(nn.Module):
 
-	def __init__(self, width, features = 9):
+	def __init__(self, width, depth, features = 9):
 		super().__init__()
 
 		self.width = width
 		self.features = features
-		self.DO = 0.5
+		self.DO = 0.05
 		self.iter = 0
 
+		self.trunk = []
+		for d in range(depth-1):
+			self.trunk += [nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO)]
 		self.trunk = nn.Sequential(
-			nn.Linear(self.features, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
-			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO))
+			nn.Linear(self.features, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO), *self.trunk)
+			#nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
+			#nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
+			#nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO))
 
-		self.width //= 2
+		#self.width //= 2
 
 		self.pred = nn.Sequential(
-			nn.Linear(2*self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
+			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
 			nn.Linear(self.width, self.width//2), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width//2), nn.Dropout(self.DO),
 			nn.Linear(self.width//2, self.width//4), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width//4),
 			nn.Linear(self.width//4, 1))
 
 		self.prob = nn.Sequential(
-			nn.Linear(2*self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
+			nn.Linear(self.width, self.width), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width), nn.Dropout(self.DO),
 			nn.Linear(self.width, self.width//2), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width//2), nn.Dropout(self.DO),
 			nn.Linear(self.width//2, self.width//4), nn.ReLU(inplace=True), nn.BatchNorm1d(self.width//4),
 			nn.Linear(self.width//4, 1))
 
-		self.width *= 2
+		#self.width *= 2
 
 	def forward(self, x):
 
@@ -63,3 +67,18 @@ class Model(nn.Module):
 		for param in self.parameters():
 			L1_loss += torch.sum(torch.abs(param))
 		return L1_loss
+
+
+class CombinedModel(nn.Module):
+
+	def __init__(self, models):
+		super().__init__()
+
+		self.trunks = nn.ModuleList([model.trunk for model in models])
+		self.probs =  nn.ModuleList([model.prob for model in models])
+		self.k = len(models)
+
+	def forward(self, x):
+		#pdb.set_trace()
+		probs = torch.stack([torch.sigmoid(self.probs[k](self.trunks[k](x)))[:,0] for k in range(self.k)])
+		return probs.mean(dim=0)

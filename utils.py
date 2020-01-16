@@ -65,7 +65,7 @@ def Loss(pred, strain, prob, ptrain, stest, ptest, model, xtest, epoch, best, L1
 	if (epoch+1)%100 == 0:
 		print(f'epoch = {epoch+1}; mse = {mse:.3f}; bce = {bce:.3f}; tmse = {tmse:.3f}; tbce = {tbce:.3f}; acc = {acc:.3f}; test acc = {tacc:.3f}; AUC = {auc:.4f}; test AUC = {tauc:.4f}, best test AUC = {best:.3f}')
 
-	return loss, tauc
+	return loss, auc, tauc
 
 
 def AUC(ytrain, ytest, prob, tprob):
@@ -92,7 +92,7 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 	over_rocs.append([fpr_over, tpr_over])
 
 	# Generate Calibration Curves
-	N = 10
+	N = 5
 	strategy = 'uniform'
 	# These 4 lines are required to create the K calibration curves and find the mean w/ the +/-1 std region
 	#spec_cal  = calibration_curve(yspec.data.cpu().numpy(), probspec.data.cpu().numpy(), n_bins=N, strategy=strategy)
@@ -199,7 +199,7 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		both_fig, both_ax = plt.subplots()
 		both_ax.plot(mean_fpr, mean_spec_roc, color ='C0', label=f'DSS AUC = {spec_mean_auc:.2f} $\pm$ {spec_std_auc:.2f})')
 		both_ax.fill_between(mean_fpr, spec_bot, spec_top, color='C0', alpha=.1)#, label=f'$\pm$ 1 DSS std')
-		both_ax.plot(mean_fpr, mean_over_roc, color ='C1', label=f'Overall AUC = {over_mean_auc:.2f} $\pm$ {over_std_auc:.2f})')
+		both_ax.plot(mean_fpr, mean_over_roc, color ='C1', label=f'OS AUC = {over_mean_auc:.2f} $\pm$ {over_std_auc:.2f})')
 		both_ax.fill_between(mean_fpr, over_bot, over_top, color='C1', alpha=.1)# label=f'$\pm$ 1 OVR std')
 		both_ax.grid(alpha=0.2)
 		both_ax.legend(loc=4)
@@ -277,9 +277,11 @@ def AUCplot(spec_model, over_model, spec_xtest, over_xtest, yspec, yover, spec_r
 		
 		spec = calibration_curve(y_spec, p_spec, n_bins=N, strategy=strategy)
 		over = calibration_curve(y_over, p_over, n_bins=N, strategy=strategy)
+		spec_mb = np.polyfit(spec[1], spec[0], 1)
+		over_mb = np.polyfit(over[1], over[0], 1)
 
-		both_calax.plot(spec[1], spec[0], label='DSS', color='C0')
-		both_calax.plot(over[1], over[0], label='OS', color='C1')
+		both_calax.plot(spec[1], spec[0], label=f'DSS, m = {spec_mb[0]:.2f}, b = {spec_mb[1]:.2f}', color='C0')
+		both_calax.plot(over[1], over[0], label=f'OS, m = {over_mb[0]:.2f}, b = {over_mb[1]:.2f}', color='C1')
 		both_calax.plot([0, 1], [0, 1], 'r--')
 		both_calax.grid(alpha=0.2)
 		both_calax.legend(loc=4)
