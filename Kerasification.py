@@ -36,13 +36,13 @@ for i in range(len(final_overs)):
 
 pdb.set_trace()
 spec_input = Input(shape=(9,))
-spec_output = KB.mean(KB.concatenate([spec(spec_input) for spec in k_spec], axis=0), axis=0)
+spec_output = KB.mean(KB.concatenate([spec(spec_input) for spec in k_spec], axis=1), axis=1)
 
 spec_combined_model_k = KModel(inputs=spec_input, outputs=spec_output)
 spec_combined_model_k.save(f'Final_DSS.h5')
 
 over_input = Input(shape=(9,))
-over_output = KB.mean(KB.concatenate([over(over_input) for over in k_over], axis=0), axis=0)
+over_output = KB.mean(KB.concatenate([over(over_input) for over in k_over], axis=1), axis=1)
 
 over_combined_model_k = KModel(inputs=over_input, outputs=over_output)
 over_combined_model_k.save(f'Final_OS.h5')
