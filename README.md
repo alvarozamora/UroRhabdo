@@ -12,8 +12,8 @@ Python 3.6
 
 Clone the repository:
 ```
-git clone https://github.com/Guo-Xiaoqing/SSL_WCE.git
-cd SSL_WCE 
+git clone https://github.com/alvarozamora/UroRhabdo
+cd UroRhabdo
 ```
 
 * Use "preprocessing.py" preprocess the data stored in uro.csv 
