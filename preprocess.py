@@ -6,7 +6,7 @@ import copy
 # Gathering Data
 print("Gathering and Preprocessing Data")
 Data = []
-with open("/Users/expwnential/UroRhabdo/uro.csv") as file:
+with open("/Users/hridaybhambhvani/UroRhabdo/uro.csv") as file:
 	CSV = csv.reader(file, delimiter=',')
 	for row in CSV:
 		Data.append(row)

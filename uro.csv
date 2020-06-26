@@ -1,1 +1,278 @@
-Patient ID,Age,Race,Sex,Site,Survival months,Vital status recode (study cutoff used),SEER cause-specific death classification,stage,size,surgery,radiation,histology14010008,3,White,Female,Vagina,109,Alive,Alive or dead of other cause,Unstaged,69,1,1,Embryonal25859344,2,White,Female,Vagina,35,Dead,Dead (attributable to this cancer dx),Unstaged,20,0,0,Embryonal31410090,2,Black,Female,Vagina,111,Alive,Alive or dead of other cause,Unstaged,8,0,0,Embryonal37829591,0,Black,Female,Vagina,136,Alive,Alive or dead of other cause,Unstaged,27,0,0,Embryonal49959222,1,White,Female,Vagina,63,Dead,Alive or dead of other cause,Unstaged,60,0,0,Embryonal51067090,1,White,Female,Vagina,77,Alive,Alive or dead of other cause,Unstaged,999,1,1,Embryonal57994393,3,White,Female,Vagina,155,Alive,Alive or dead of other cause,Unstaged,30,0,0,Embryonal58332977,12,White,Female,Vagina,133,Alive,Alive or dead of other cause,Unstaged,999,0,0,Embryonal58408613,2,Black,Female,Vagina,116,Alive,Alive or dead of other cause,Unstaged,80,1,1,Embryonal58472017,12,White,Female,Vagina,99,Alive,Alive or dead of other cause,Unstaged,160,0,0,Embryonal60753420,2,White,Female,Vagina,116,Alive,Alive or dead of other cause,Unstaged,44,0,0,Embryonal60837068,0,Black,Female,Vagina,131,Alive,Alive or dead of other cause,Unstaged,33,0,0,Embryonal60849603,2,Black,Female,Vagina,121,Alive,Alive or dead of other cause,Unstaged,25,0,0,Embryonal76035987,1,White,Female,Vagina,99,Alive,Alive or dead of other cause,Unstaged,999,0,0,Embryonal76069593,3,Black,Female,Vagina,92,Alive,Alive or dead of other cause,Unstaged,999,0,0,Embryonal2836369,13,White,Male,Prostate,28,Dead,Dead (attributable to this cancer dx),Distant,150,0,1,Alveolar7843760,2,White,Female,Urinary Bladder,21,Dead,Dead (attributable to this cancer dx),Distant,12,1,1,Embryonal7847574,14,White,Male,Other Male Genital Organs,202,Alive,Alive or dead of other cause,Distant,90,1,1,Embryonal8375729,16,White,Male,Prostate,7,Dead,Dead (attributable to this cancer dx),Distant,999,0,1,Alveolar12934049,4,White,Male,Urinary Bladder,196,Alive,Alive or dead of other cause,Distant,100,1,1,Alveolar12947588,17,White,Male,Prostate,12,Dead,Dead (attributable to this cancer dx),Distant,70,0,1,Alveolar13393755,17,White,Male,Testis,16,Dead,Dead (attributable to this cancer dx),Distant,85,0,0,Embryonal13934546,16,White,Male,Prostate,26,Dead,Dead (attributable to this cancer dx),Distant,999,0,1,Alveolar26307449,16,White,Female,Vulva,15,Dead,Dead (attributable to this cancer dx),Distant,95,0,1,Alveolar28979620,19,White,Male,Testis,66,Alive,Alive or dead of other cause,Distant,999,1,1,Embryonal28985135,16,White,Male,Prostate,27,Dead,Dead (attributable to this cancer dx),Distant,129,0,1,Alveolar29003998,19,White,Male,Prostate,15,Dead,Dead (attributable to this cancer dx),Distant,999,0,1,Alveolar30967068,6,Black,Male,Prostate,14,Dead,Dead (attributable to this cancer dx),Distant,999,0,1,Alveolar31413601,17,Black,Male,Testis,18,Dead,Dead (attributable to this cancer dx),Distant,70,1,1,Alveolar31419128,4,Black,Male,Testis,107,Alive,Alive or dead of other cause,Distant,52,1,1,Other31432517,3,White,Male,Prostate,104,Alive,Alive or dead of other cause,Distant,70,0,1,Embryonal33046895,0,Asian or Pacific Islander,Male,Prostate,18,Dead,Dead (attributable to this cancer dx),Distant,65,1,1,Alveolar33437002,13,White,Male,Testis,14,Dead,Dead (attributable to this cancer dx),Distant,188,1,1,Embryonal36734978,4,White,Female,Urinary Bladder,29,Dead,Dead (attributable to this cancer dx),Distant,150,0,0,Embryonal37183061,8,Black,Male,Testis,180,Alive,Alive or dead of other cause,Distant,999,1,1,Embryonal37247162,5,White,Male,Urinary Bladder,13,Dead,Dead (attributable to this cancer dx),Distant,99,0,0,Embryonal37752937,16,White,Male,Testis,17,Dead,Dead (attributable to this cancer dx),Distant,150,0,0,Other38374393,14,White,Male,Testis,22,Dead,Dead (attributable to this cancer dx),Distant,150,1,1,Embryonal42238768,1,White,Male,Urinary Bladder,187,Alive,Alive or dead of other cause,Distant,60,0,1,Embryonal44962889,5,White,Male,Urinary Bladder,194,Alive,Alive or dead of other cause,Distant,170,1,1,Embryonal46000384,9,White,Female,Urinary Bladder,9,Dead,Dead (attributable to this cancer dx),Distant,200,1,1,Embryonal48848353,18,White,Male,Testis,15,Dead,Dead (attributable to this cancer dx),Distant,65,1,1,Embryonal49306822,0,American Indian/Alaska Native,Male,Prostate,26,Dead,Dead (attributable to this cancer dx),Distant,70,0,0,Embryonal49860867,3,White,Male,Prostate,61,Dead,Dead (attributable to this cancer dx),Distant,70,1,1,Embryonal49944512,2,White,Male,Other Male Genital Organs,114,Alive,Alive or dead of other cause,Distant,50,0,0,Alveolar49963495,13,White,Male,Testis,94,Dead,Alive or dead of other cause,Distant,27,0,0,Embryonal50954312,14,Black,Male,Testis,103,Alive,Alive or dead of other cause,Distant,140,1,1,Embryonal50959362,14,White,Male,Testis,110,Alive,Alive or dead of other cause,Distant,150,1,1,Embryonal51013712,15,White,Male,Other Male Genital Organs,112,Alive,Alive or dead of other cause,Distant,39,1,1,Embryonal51022139,8,White,Male,Testis,74,Dead,Dead (attributable to this cancer dx),Distant,110,1,1,Embryonal51070237,1,White,Male,Prostate,91,Alive,Alive or dead of other cause,Distant,60,0,1,Embryonal51507824,17,White,Male,Testis,98,Alive,Alive or dead of other cause,Distant,170,1,1,Unknown51641726,0,White,Male,Other Male Genital Organs,17,Dead,Dead (attributable to this cancer dx),Distant,90,0,0,Embryonal52134668,11,White,Male,Testis,87,Alive,Alive or dead of other cause,Distant,174,1,1,Embryonal57939298,5,White,Male,Prostate,178,Alive,Alive or dead of other cause,Distant,999,1,1,Embryonal58453043,13,White,Female,Urinary Bladder,29,Dead,Dead (attributable to this cancer dx),Distant,190,1,1,Embryonal60213744,2,White,Male,Prostate,168,Alive,Alive or dead of other cause,Distant,999,0,1,Unknown60824812,1,Black,Female,Vagina,28,Dead,Dead (attributable to this cancer dx),Distant,80,0,0,Other62042861,19,White,Male,Prostate,19,Dead,Dead (attributable to this cancer dx),Distant,109,0,1,Embryonal62059880,16,White,Male,Testis,113,Alive,Alive or dead of other cause,Distant,90,1,1,Other62065239,17,White,Male,Testis,107,Alive,Alive or dead of other cause,Distant,120,0,0,Embryonal69481579,17,White,Male,Prostate,16,Dead,Dead (attributable to this cancer dx),Distant,150,0,1,Embryonal69916529,19,White,Male,Other Male Genital Organs,37,Dead,Dead (attributable to this cancer dx),Distant,90,0,0,Embryonal69927703,4,White,Male,Urinary Bladder,2,Dead,Dead (attributable to this cancer dx),Distant,999,0,0,Embryonal69964438,2,Black,Male,Prostate,171,Alive,Alive or dead of other cause,Distant,999,0,0,Embryonal71003910,0,White,Male,Prostate,152,Alive,Alive or dead of other cause,Distant,999,0,0,Alveolar71073113,16,White,Male,Urinary Bladder,124,Alive,Alive or dead of other cause,Distant,999,0,0,Embryonal74882258,15,White,Male,Testis,169,Alive,Alive or dead of other cause,Distant,40,0,0,Embryonal76087717,14,White,Male,Prostate,8,Dead,Dead (attributable to this cancer dx),Distant,55,0,0,Embryonal2943832,16,White,Female,Cervix Uteri,167,Alive,Alive or dead of other cause,Localized,22,0,0,Embryonal3412628,17,White,Female,Cervix Uteri,135,Alive,Alive or dead of other cause,Localized,80,0,0,Embryonal3415038,17,White,Female,Cervix Uteri,134,Alive,Alive or dead of other cause,Localized,80,0,0,Embryonal3519871,14,White,Male,Testis,102,Alive,Alive or dead of other cause,Localized,45,1,1,Embryonal3523371,2,Black,Male,Urinary Bladder,97,Alive,Alive or dead of other cause,Localized,34,0,0,Embryonal3556209,2,White,Male,Testis,80,Alive,Alive or dead of other cause,Localized,80,0,0,Embryonal7951375,5,White,Male,Other Male Genital Organs,166,Alive,Alive or dead of other cause,Localized,32,0,0,Other8372833,10,White,Male,Urinary Bladder,149,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal8522242,14,Black,Male,Other Male Genital Organs,93,Alive,Alive or dead of other cause,Localized,9,0,0,Embryonal8986956,16,White,Male,Testis,83,Alive,Alive or dead of other cause,Localized,80,0,0,Embryonal8991922,13,Asian or Pacific Islander,Male,Other Male Genital Organs,76,Alive,Alive or dead of other cause,Localized,999,1,1,Other12930953,1,Black,Female,Urinary Bladder,199,Alive,Alive or dead of other cause,Localized,999,1,1,Embryonal13364316,15,White,Male,Other Male Genital Organs,68,Dead,Dead (attributable to this cancer dx),Localized,90,1,1,Embryonal13393748,16,White,Male,Other Male Genital Organs,175,Alive,Alive or dead of other cause,Localized,999,0,0,Other13450036,17,White,Male,Testis,110,Alive,Alive or dead of other cause,Localized,50,0,0,Embryonal14018114,1,White,Male,Testis,102,Alive,Alive or dead of other cause,Localized,999,0,0,Unknown14027263,9,Black,Male,Testis,100,Alive,Alive or dead of other cause,Localized,103,0,0,Embryonal14056982,3,Black,Male,Testis,85,Alive,Alive or dead of other cause,Localized,28,0,0,Unknown14484781,0,White,Female,Urinary Bladder,13,Dead,Dead (attributable to this cancer dx),Localized,999,0,0,Embryonal19070767,2,White,Male,Testis,186,Alive,Alive or dead of other cause,Localized,55,0,0,Embryonal20095127,3,Unknown,Male,Other Male Genital Organs,83,Alive,Alive or dead of other cause,Localized,51,0,0,Other25306182,15,White,Male,Testis,170,Alive,Alive or dead of other cause,Localized,55,0,0,Embryonal26313610,7,White,Male,Testis,114,Alive,Alive or dead of other cause,Localized,59,0,0,Unknown28539306,2,White,Male,Urinary Bladder,156,Alive,Alive or dead of other cause,Localized,25,1,1,Embryonal28560337,5,White,Female,Urinary Bladder,138,Alive,Alive or dead of other cause,Localized,34,1,1,Embryonal29009815,2,White,Female,Urinary Bladder,67,Alive,Alive or dead of other cause,Localized,70,0,1,Embryonal29018282,1,White,Male,Testis,103,Alive,Alive or dead of other cause,Localized,999,0,0,Other30887285,1,White,Female,Vagina,183,Alive,Alive or dead of other cause,Localized,25,0,0,Embryonal30920121,1,Black,Female,Vulva,165,Alive,Alive or dead of other cause,Localized,22,1,1,Alveolar30957335,17,Black,Male,Other Male Genital Organs,143,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal30967065,6,Black,Male,Testis,139,Alive,Alive or dead of other cause,Localized,55,0,0,Embryonal31366283,14,Black,Male,Testis,83,Alive,Alive or dead of other cause,Localized,80,0,0,Alveolar31404282,14,Black,Male,Testis,113,Alive,Alive or dead of other cause,Localized,80,0,0,Embryonal31453582,5,Black,Male,Testis,105,Alive,Alive or dead of other cause,Localized,47,0,0,Embryonal31470093,1,Asian or Pacific Islander,Male,Urinary Bladder,76,Alive,Alive or dead of other cause,Localized,999,1,1,Embryonal33420062,2,Asian or Pacific Islander,Male,Testis,143,Alive,Alive or dead of other cause,Localized,14,0,0,Other33427670,1,White,Male,Testis,134,Alive,Alive or dead of other cause,Localized,25,0,0,Embryonal33479272,1,White,Female,Vulva,102,Alive,Alive or dead of other cause,Localized,25,1,1,Alveolar37211088,9,White,Female,Vagina,189,Alive,Alive or dead of other cause,Localized,80,0,0,Embryonal37216711,0,White,Female,Urinary Bladder,54,Alive,Alive or dead of other cause,Localized,35,0,0,Embryonal37703059,9,White,Male,Testis,169,Alive,Alive or dead of other cause,Localized,120,0,0,Embryonal37733600,1,Black,Female,Vagina,122,Alive,Alive or dead of other cause,Localized,65,0,0,Embryonal37753308,12,White,Male,Testis,165,Alive,Alive or dead of other cause,Localized,55,0,0,Alveolar39456136,18,White,Male,Testis,82,Alive,Alive or dead of other cause,Localized,77,0,0,Other43866056,18,White,Male,Testis,185,Alive,Alive or dead of other cause,Localized,70,0,0,Embryonal44486754,16,White,Male,Urinary Bladder,187,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal44963587,7,White,Male,Urinary Bladder,30,Dead,Dead (attributable to this cancer dx),Localized,999,1,1,Embryonal45591786,4,White,Male,Testis,178,Alive,Alive or dead of other cause,Localized,105,0,0,Embryonal46017188,1,White,Female,Vagina,148,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal47718116,14,White,Male,Other Male Genital Organs,174,Alive,Alive or dead of other cause,Localized,180,1,1,Embryonal47760918,4,White,Male,Other Male Genital Organs,193,Alive,Alive or dead of other cause,Localized,15,0,0,Embryonal48219095,0,White,Male,Urinary Bladder,5,Alive,Alive or dead of other cause,Localized,20,0,0,Unknown48321255,10,Black,Male,Testis,154,Alive,Alive or dead of other cause,Localized,50,0,0,Other48754988,3,White,Male,Testis,170,Alive,Alive or dead of other cause,Localized,35,0,0,Unknown48771170,1,White,Female,Vagina,160,Alive,Alive or dead of other cause,Localized,110,1,1,Embryonal49387448,10,White,Male,Testis,143,Alive,Alive or dead of other cause,Localized,45,1,1,Embryonal49413112,4,White,Male,Other Male Genital Organs,142,Alive,Alive or dead of other cause,Localized,30,0,0,Embryonal49883860,12,White,Female,Cervix Uteri,136,Alive,Alive or dead of other cause,Localized,80,0,0,Embryonal49883923,19,White,Female,Cervix Uteri,138,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal49907031,7,White,Female,Cervix Uteri,126,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal49917007,0,White,Male,Testis,125,Alive,Alive or dead of other cause,Localized,999,0,0,Unknown49964343,7,White,Female,Ovary,19,Dead,Dead (attributable to this cancer dx),Localized,999,0,0,Other49992524,1,White,Male,Urinary Bladder,127,Alive,Alive or dead of other cause,Localized,44,0,0,Embryonal50515271,19,White,Female,Cervix Uteri,121,Alive,Alive or dead of other cause,Localized,30,0,0,Embryonal51040970,12,White,Female,Cervix Uteri,123,Alive,Alive or dead of other cause,Localized,90,0,0,Embryonal51075013,3,White,Male,Testis,110,Alive,Alive or dead of other cause,Localized,25,0,0,Embryonal51091961,3,White,Male,Testis,99,Alive,Alive or dead of other cause,Localized,999,0,0,Other51531666,8,White,Male,Testis,101,Alive,Alive or dead of other cause,Localized,70,0,0,Embryonal58811732,8,Black,Male,Testis,88,Alive,Alive or dead of other cause,Localized,125,0,0,Embryonal59229034,18,Unknown,Female,Cervix Uteri,88,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal60235008,17,White,Male,Testis,156,Alive,Alive or dead of other cause,Localized,45,0,0,Embryonal60853903,2,White,Female,Urinary Bladder,101,Alive,Alive or dead of other cause,Localized,50,0,0,Embryonal62062142,7,Black,Male,Testis,101,Alive,Alive or dead of other cause,Localized,999,0,0,Other62106879,2,White,Female,Vulva,94,Alive,Alive or dead of other cause,Localized,770,0,1,Other69457212,5,White,Male,Testis,185,Alive,Alive or dead of other cause,Localized,50,0,0,Other69908505,4,White,Male,Testis,172,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal70473587,7,White,Male,Testis,166,Alive,Alive or dead of other cause,Localized,65,0,0,Embryonal70492116,4,White,Male,Testis,144,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal71108615,13,White,Male,Other Male Genital Organs,46,Dead,Dead (attributable to this cancer dx),Localized,35,0,0,Embryonal71137762,3,Black,Male,Testis,113,Alive,Alive or dead of other cause,Localized,45,0,0,Embryonal72093748,6,White,Male,Testis,91,Alive,Alive or dead of other cause,Localized,35,1,1,Embryonal72634758,2,Black,Male,Testis,65,Alive,Alive or dead of other cause,Localized,45,1,1,Embryonal75475143,13,Black,Female,Cervix Uteri,135,Alive,Alive or dead of other cause,Localized,71,0,0,Embryonal75525049,11,Black,Male,Other Male Genital Organs,109,Alive,Alive or dead of other cause,Localized,80,0,0,Embryonal75950120,6,White,Female,Ovary,21,Dead,Dead (attributable to this cancer dx),Localized,999,0,0,Embryonal76560322,2,White,Male,Urinary Bladder,76,Alive,Alive or dead of other cause,Localized,11,0,1,Embryonal76562833,13,Black,Female,Ovary,52,Dead,Alive or dead of other cause,Localized,320,0,0,Embryonal3434298,1,White,Male,Prostate,26,Dead,Dead (attributable to this cancer dx),Regional,900,0,0,Embryonal13508516,16,Black,Male,Prostate,137,Alive,Alive or dead of other cause,Localized,79,0,1,Embryonal13936530,3,American Indian/Alaska Native,Male,Prostate,36,Dead,Dead (attributable to this cancer dx),Localized,42,0,1,Embryonal22092027,15,White,Male,Prostate,117,Alive,Alive or dead of other cause,Localized,21,0,1,Embryonal25882585,1,White,Male,Prostate,121,Alive,Alive or dead of other cause,Regional,51,0,1,Embryonal38330283,3,Black,Male,Prostate,26,Dead,Dead (attributable to this cancer dx),Regional,59,1,1,Embryonal44968588,9,White,Male,Prostate,202,Alive,Alive or dead of other cause,Regional,85,1,1,Embryonal45588758,3,White,Male,Prostate,179,Alive,Alive or dead of other cause,Localized,999,0,1,Embryonal51013950,1,White,Male,Prostate,108,Alive,Alive or dead of other cause,Regional,52,0,1,Embryonal51039119,2,Black,Male,Prostate,107,Alive,Alive or dead of other cause,Localized,36,1,1,Embryonal70013864,2,White,Male,Prostate,15,Dead,Dead (attributable to this cancer dx),Localized,50,1,1,Embryonal75995342,6,White,Male,Prostate,113,Alive,Alive or dead of other cause,Regional,100,0,1,Embryonal2848057,18,White,Male,Other Male Genital Organs,178,Alive,Alive or dead of other cause,Regional,47,1,1,Embryonal2872567,8,White,Male,Other Male Genital Organs,188,Alive,Alive or dead of other cause,Regional,35,0,0,Embryonal2948726,11,Black,Female,Urinary Bladder,163,Alive,Alive or dead of other cause,Regional,999,0,0,Unknown3524933,15,Asian or Pacific Islander,Male,Other Male Genital Organs,102,Alive,Alive or dead of other cause,Regional,73,1,1,Embryonal8911689,19,White,Male,Testis,13,Dead,Dead (attributable to this cancer dx),Regional,60,1,1,Embryonal8956815,7,White,Male,Testis,93,Alive,Alive or dead of other cause,Regional,40,1,1,Embryonal12941474,0,White,Female,Vagina,201,Alive,Alive or dead of other cause,Regional,40,0,0,Embryonal13421756,15,White,Male,Testis,165,Alive,Alive or dead of other cause,Regional,90,1,1,Other13467293,15,Black,Female,Cervix Uteri,14,Dead,Alive or dead of other cause,Regional,80,1,1,Embryonal13949926,18,Asian or Pacific Islander,Male,Testis,123,Alive,Alive or dead of other cause,Regional,140,1,1,Embryonal14047300,2,White,Male,Urinary Bladder,99,Alive,Alive or dead of other cause,Regional,104,0,1,Embryonal14519432,13,Black,Male,Other Male Genital Organs,42,Dead,Dead (attributable to this cancer dx),Regional,160,1,1,Embryonal16514973,6,Asian or Pacific Islander,Male,Urinary Bladder,54,Alive,Alive or dead of other cause,Regional,120,1,1,Embryonal20055815,4,White,Male,Testis,106,Alive,Alive or dead of other cause,Regional,41,0,0,Embryonal20140315,3,Black,Female,"Uterus, NOS",44,Alive,Alive or dead of other cause,Regional,140,0,0,Embryonal22030434,17,White,Male,Other Male Genital Organs,156,Alive,Alive or dead of other cause,Regional,90,0,0,Other25233727,16,White,Female,Ovary,13,Dead,Dead (attributable to this cancer dx),Regional,140,1,1,Other25246989,18,White,Male,Testis,188,Alive,Alive or dead of other cause,Regional,40,1,1,Embryonal25253789,18,White,Male,Other Male Genital Organs,186,Alive,Alive or dead of other cause,Regional,40,1,1,Unknown26307429,0,White,Female,Urinary Bladder,80,Alive,Alive or dead of other cause,Regional,100,0,0,Embryonal26371287,19,Black,Female,Vulva,35,Dead,Dead (attributable to this cancer dx),Regional,130,0,1,Alveolar28558721,13,White,Male,Testis,139,Alive,Alive or dead of other cause,Regional,33,1,1,Embryonal28569753,2,White,Female,Urinary Bladder,129,Alive,Alive or dead of other cause,Regional,999,0,1,Embryonal37202056,5,White,Male,Testis,188,Alive,Alive or dead of other cause,Regional,30,1,1,Other37274490,18,White,Male,Testis,40,Dead,Dead (attributable to this cancer dx),Regional,120,0,0,Other38879113,18,White,Male,Other Male Genital Organs,100,Alive,Alive or dead of other cause,Regional,62,1,1,Embryonal38904946,15,White,Male,Testis,98,Alive,Alive or dead of other cause,Regional,133,0,0,Embryonal39399387,5,White,Male,Testis,73,Alive,Alive or dead of other cause,Regional,55,0,0,Embryonal42239447,2,White,Male,Urinary Bladder,190,Alive,Alive or dead of other cause,Regional,53,0,1,Embryonal42835873,16,White,Female,Vulva,191,Alive,Alive or dead of other cause,Regional,70,0,1,Alveolar47761774,2,White,Female,Urinary Bladder,194,Alive,Alive or dead of other cause,Regional,100,1,1,Embryonal47766650,3,White,Male,Testis,174,Alive,Alive or dead of other cause,Regional,40,0,0,Other48214806,13,White,Male,Other Male Genital Organs,123,Dead,Alive or dead of other cause,Regional,150,1,1,Embryonal48266145,4,White,Male,Urinary Bladder,174,Alive,Alive or dead of other cause,Regional,999,0,0,Embryonal48327298,19,Black,Male,Testis,17,Dead,Dead (attributable to this cancer dx),Regional,55,0,0,Embryonal48874946,17,Black,Male,Testis,29,Dead,Dead (attributable to this cancer dx),Regional,150,1,1,Embryonal49433602,13,White,Male,Testis,144,Alive,Alive or dead of other cause,Regional,50,1,1,Unknown49922153,4,White,Male,Testis,135,Alive,Alive or dead of other cause,Regional,48,0,0,Embryonal49926087,13,White,Male,Other Male Genital Organs,122,Alive,Alive or dead of other cause,Regional,55,0,0,Embryonal49969392,0,White,Male,Urinary Bladder,55,Dead,Dead (attributable to this cancer dx),Regional,46,1,1,Embryonal50486957,4,White,Female,Urinary Bladder,122,Alive,Alive or dead of other cause,Regional,240,1,1,Alveolar51661520,1,White,Female,Vulva,86,Alive,Alive or dead of other cause,Regional,45,1,1,Unknown57926353,17,White,Male,Other Male Genital Organs,167,Alive,Alive or dead of other cause,Regional,17,1,1,Embryonal58008219,15,White,Male,Testis,158,Alive,Alive or dead of other cause,Regional,120,1,1,Other62634132,16,Black,Male,Other Male Genital Organs,79,Alive,Alive or dead of other cause,Regional,37,1,1,Embryonal69934772,1,Black,Female,Urinary Bladder,177,Alive,Alive or dead of other cause,Regional,40,0,1,Embryonal70044924,14,White,Male,Other Male Genital Organs,159,Alive,Alive or dead of other cause,Regional,70,1,1,Embryonal70478883,7,Black,Male,Testis,148,Alive,Alive or dead of other cause,Regional,45,0,0,Alveolar70507752,0,White,Male,Testis,127,Alive,Alive or dead of other cause,Regional,30,0,0,Embryonal71001525,17,Black,Male,Urinary Bladder,29,Dead,Dead (attributable to this cancer dx),Regional,48,1,1,Embryonal71016851,9,White,Male,Urinary Bladder,136,Alive,Alive or dead of other cause,Regional,999,0,1,Embryonal71115000,18,Black,Female,Cervix Uteri,119,Alive,Alive or dead of other cause,Regional,90,0,0,Embryonal71615941,14,Asian or Pacific Islander,Male,Testis,105,Alive,Alive or dead of other cause,Regional,150,1,1,Embryonal71661882,13,White,Male,Testis,108,Alive,Alive or dead of other cause,Regional,62,1,1,Unknown72181682,1,White,Female,Urinary Bladder,79,Alive,Alive or dead of other cause,Regional,150,0,0,Embryonal72625790,16,Unknown,Male,Other Male Genital Organs,76,Alive,Alive or dead of other cause,Regional,10,1,1,Embryonal74874832,3,White,Male,Testis,182,Alive,Alive or dead of other cause,Regional,999,0,0,Embryonal75386385,17,Black,Female,Cervix Uteri,161,Alive,Alive or dead of other cause,Regional,999,0,0,Embryonal75390222,4,White,Male,Testis,127,Alive,Alive or dead of other cause,Regional,40,0,0,Other75400028,13,White,Male,Testis,153,Alive,Alive or dead of other cause,Regional,90,1,1,Embryonal19586835,1,White,Male,Prostate,138,Alive,Alive or dead of other cause,Unstaged,127,0,1,Embryonal20129819,4,White,Female,Urinary Bladder,83,Alive,Alive or dead of other cause,Unstaged,58,0,0,Embryonal22095694,2,White,Male,Urinary Bladder,115,Alive,Alive or dead of other cause,Unstaged,40,0,1,Embryonal38372246,1,White,Female,"Uterus, NOS",71,Alive,Alive or dead of other cause,Unstaged,999,0,0,Embryonal57572301,13,White,Male,Testis,11,Dead,Dead (attributable to this cancer dx),Unstaged,75,1,1,Embryonal58398188,0,White,Male,Prostate,142,Alive,Alive or dead of other cause,Unstaged,70,0,0,Embryonal60183113,2,White,Female,Vagina,42,Dead,Alive or dead of other cause,Unstaged,999,0,0,Embryonal70591798,1,Black,Male,Prostate,134,Alive,Alive or dead of other cause,Unstaged,999,0,0,Unknown
+﻿Patient ID,Age,Race,Sex,Site,Survival months,Vital status recode (study cutoff used),SEER cause-specific death classification,stage,size,surgery,radiation,histology
+2306862,16,Black,Male,Prostate,34,Dead,Dead (attributable to this cancer dx),Distant,90,0,1,Unknown
+39920093,2,White,Male,Urinary Bladder,67,Alive,Alive or dead of other cause,Distant,110,0,1,Unknown
+51507824,17,White,Male,Testis,98,Alive,Alive or dead of other cause,Distant,170,1,1,Unknown
+60213744,2,White,Male,Prostate,168,Alive,Alive or dead of other cause,Distant,999,0,1,Unknown
+14018114,1,White,Male,Testis,102,Alive,Alive or dead of other cause,Localized,999,1,0,Unknown
+14056982,3,Black,Male,Testis,85,Alive,Alive or dead of other cause,Localized,28,1,0,Unknown
+26313610,7,White,Male,Testis,114,Alive,Alive or dead of other cause,Localized,59,1,0,Unknown
+48219095,0,White,Male,Urinary Bladder,5,Alive,Alive or dead of other cause,Localized,20,1,0,Unknown
+48754988,3,White,Male,Testis,170,Alive,Alive or dead of other cause,Localized,35,1,0,Unknown
+49917007,0,White,Male,Testis,125,Alive,Alive or dead of other cause,Localized,999,1,0,Unknown
+2948726,11,Black,Female,Urinary Bladder,163,Alive,Alive or dead of other cause,Regional,999,1,0,Unknown
+14574181,17,White,Male,Testis,64,Alive,Alive or dead of other cause,Regional,60,1,1,Unknown
+49433602,13,White,Male,Testis,144,Alive,Alive or dead of other cause,Regional,50,1,1,Unknown
+51661520,1,White,Female,Vulva,86,Alive,Alive or dead of other cause,Regional,995,1,1,Unknown
+71661882,13,White,Male,Testis,108,Alive,Alive or dead of other cause,Regional,62,1,1,Unknown
+70591798,1,Black,Male,Prostate,134,Alive,Alive or dead of other cause,Unstaged,999,0,0,Unknown
+25253789,18,White,Male,Other Male Genital Organs,186,Alive,Alive or dead of other cause,Unstaged,40,1,1,Unknown
+24719625,17,White,Male,Testis,2,Dead,Dead (attributable to this cancer dx),Distant,22,1,1,Other
+31419128,4,Black,Male,Testis,107,Alive,Alive or dead of other cause,Distant,52,1,1,Other
+37752937,16,White,Male,Testis,17,Dead,Dead (attributable to this cancer dx),Distant,150,1,0,Other
+62059880,16,White,Male,Testis,113,Alive,Alive or dead of other cause,Distant,90,1,1,Other
+16535003,2,White,Male,Testis,52,Alive,Alive or dead of other cause,Localized,25,1,0,Other
+29018282,1,White,Male,Testis,103,Alive,Alive or dead of other cause,Localized,999,1,0,Other
+33420062,2,Asian or Pacific Islander,Male,Testis,143,Alive,Alive or dead of other cause,Localized,14,1,0,Other
+39456136,18,White,Male,Testis,82,Alive,Alive or dead of other cause,Localized,77,1,0,Other
+48321255,10,Black,Male,Testis,154,Alive,Alive or dead of other cause,Localized,50,1,0,Other
+51091961,3,White,Male,Testis,99,Alive,Alive or dead of other cause,Localized,999,1,0,Other
+62062142,7,Black,Male,Testis,101,Alive,Alive or dead of other cause,Localized,999,1,0,Other
+62106879,2,White,Female,Vulva,94,Alive,Alive or dead of other cause,Localized,770,0,1,Other
+69457212,5,White,Male,Testis,185,Alive,Alive or dead of other cause,Localized,50,1,0,Other
+12880298,13,White,Male,Testis,206,Alive,Alive or dead of other cause,Regional,110,1,1,Other
+13421756,15,White,Male,Testis,165,Alive,Alive or dead of other cause,Regional,90,1,1,Other
+25233727,16,White,Female,Ovary,13,Dead,Dead (attributable to this cancer dx),Regional,140,1,1,Other
+37202056,5,White,Male,Testis,188,Alive,Alive or dead of other cause,Regional,30,1,1,Other
+37274490,18,White,Male,Testis,40,Dead,Dead (attributable to this cancer dx),Regional,120,1,0,Other
+47766650,3,White,Male,Testis,174,Alive,Alive or dead of other cause,Regional,40,1,0,Other
+49964343,7,White,Female,Ovary,19,Dead,Dead (attributable to this cancer dx),Regional,999,0,0,Other
+75390222,4,White,Male,Testis,127,Alive,Alive or dead of other cause,Regional,40,1,0,Other
+58008219,15,White,Male,Testis,158,Alive,Alive or dead of other cause,Unstaged,120,1,1,Other
+7951375,5,White,Male,Other Male Genital Organs,166,Alive,Alive or dead of other cause,Unstaged,32,1,0,Other
+8991922,13,Asian or Pacific Islander,Male,Other Male Genital Organs,76,Alive,Alive or dead of other cause,Unstaged,999,1,1,Other
+13393748,16,White,Male,Other Male Genital Organs,175,Alive,Alive or dead of other cause,Unstaged,999,1,0,Other
+20095127,3,Unknown,Male,Other Male Genital Organs,83,Alive,Alive or dead of other cause,Unstaged,51,1,0,Other
+22030434,17,White,Male,Other Male Genital Organs,156,Alive,Alive or dead of other cause,Unstaged,90,1,0,Other
+60824812,1,Black,Female,Vagina,28,Dead,Dead (attributable to this cancer dx),Unstaged,80,1,0,Other
+7843760,2,White,Female,Urinary Bladder,21,Dead,Dead (attributable to this cancer dx),Distant,12,1,1,Embryonal
+13393755,17,White,Male,Testis,16,Dead,Dead (attributable to this cancer dx),Distant,85,1,0,Embryonal
+28491963,0,White,Male,Prostate,12,Dead,Dead (attributable to this cancer dx),Distant,96,0,1,Embryonal
+28979620,19,White,Male,Testis,66,Alive,Alive or dead of other cause,Distant,999,1,1,Embryonal
+31432517,3,White,Male,Prostate,104,Alive,Alive or dead of other cause,Distant,70,0,1,Embryonal
+31495718,16,White,Male,Testis,66,Alive,Alive or dead of other cause,Distant,210,1,1,Embryonal
+33437002,13,White,Male,Testis,14,Dead,Dead (attributable to this cancer dx),Distant,188,1,1,Embryonal
+34417272,17,White,Male,Testis,215,Alive,Alive or dead of other cause,Distant,40,1,1,Embryonal
+36734978,4,White,Female,Urinary Bladder,29,Dead,Dead (attributable to this cancer dx),Distant,150,1,0,Embryonal
+37183061,8,Black,Male,Testis,180,Alive,Alive or dead of other cause,Distant,999,1,1,Embryonal
+37247162,5,White,Male,Urinary Bladder,13,Dead,Dead (attributable to this cancer dx),Distant,99,1,0,Embryonal
+38374393,14,White,Male,Testis,22,Dead,Dead (attributable to this cancer dx),Distant,150,1,1,Embryonal
+42238768,1,White,Male,Urinary Bladder,187,Alive,Alive or dead of other cause,Distant,60,0,1,Embryonal
+44962889,5,White,Male,Urinary Bladder,194,Alive,Alive or dead of other cause,Distant,170,1,1,Embryonal
+46000384,9,White,Female,Urinary Bladder,9,Dead,Dead (attributable to this cancer dx),Distant,200,1,1,Embryonal
+48848353,18,White,Male,Testis,15,Dead,Dead (attributable to this cancer dx),Distant,65,1,1,Embryonal
+49306822,0,American Indian/Alaska Native,Male,Prostate,26,Dead,Dead (attributable to this cancer dx),Distant,70,1,0,Embryonal
+49860867,3,White,Male,Prostate,61,Dead,Dead (attributable to this cancer dx),Distant,70,1,1,Embryonal
+49963495,13,White,Male,Testis,94,Dead,Alive or dead of other cause,Distant,27,1,0,Embryonal
+50954312,14,Black,Male,Testis,103,Alive,Alive or dead of other cause,Distant,140,1,1,Embryonal
+50959362,14,White,Male,Testis,110,Alive,Alive or dead of other cause,Distant,150,1,1,Embryonal
+51022139,8,White,Male,Testis,74,Dead,Dead (attributable to this cancer dx),Distant,110,1,1,Embryonal
+51070237,1,White,Male,Prostate,91,Alive,Alive or dead of other cause,Distant,60,0,1,Embryonal
+52134668,11,White,Male,Testis,87,Alive,Alive or dead of other cause,Distant,174,1,1,Embryonal
+57939298,5,White,Male,Prostate,178,Alive,Alive or dead of other cause,Distant,999,1,1,Embryonal
+58453043,13,White,Female,Urinary Bladder,29,Dead,Dead (attributable to this cancer dx),Distant,190,1,1,Embryonal
+62042861,19,White,Male,Prostate,19,Dead,Dead (attributable to this cancer dx),Distant,109,0,1,Embryonal
+62065239,17,White,Male,Testis,107,Alive,Alive or dead of other cause,Distant,120,1,0,Embryonal
+69481579,17,White,Male,Prostate,16,Dead,Dead (attributable to this cancer dx),Distant,150,0,1,Embryonal
+69927703,4,White,Male,Urinary Bladder,2,Dead,Dead (attributable to this cancer dx),Distant,999,1,0,Embryonal
+69964438,2,Black,Male,Prostate,171,Alive,Alive or dead of other cause,Distant,999,0,0,Embryonal
+71073113,16,White,Male,Urinary Bladder,124,Alive,Alive or dead of other cause,Distant,999,0,0,Embryonal
+74882258,15,White,Male,Testis,169,Alive,Alive or dead of other cause,Distant,40,1,0,Embryonal
+76087717,14,White,Male,Prostate,8,Dead,Dead (attributable to this cancer dx),Distant,55,0,0,Embryonal
+2943832,16,White,Female,Cervix Uteri,167,Alive,Alive or dead of other cause,Localized,22,1,0,Embryonal
+3412628,17,White,Female,Cervix Uteri,135,Alive,Alive or dead of other cause,Localized,80,1,0,Embryonal
+3415038,17,White,Female,Cervix Uteri,134,Alive,Alive or dead of other cause,Localized,80,1,0,Embryonal
+3519871,14,White,Male,Testis,102,Alive,Alive or dead of other cause,Localized,45,1,1,Embryonal
+3523371,2,Black,Male,Urinary Bladder,97,Alive,Alive or dead of other cause,Localized,34,1,0,Embryonal
+3556209,2,White,Male,Testis,80,Alive,Alive or dead of other cause,Localized,80,1,0,Embryonal
+7419551,15,White,Male,Testis,206,Alive,Alive or dead of other cause,Localized,60,1,0,Embryonal
+8372833,10,White,Male,Urinary Bladder,149,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal
+8986956,16,White,Male,Testis,83,Alive,Alive or dead of other cause,Localized,80,1,0,Embryonal
+12930953,1,Black,Female,Urinary Bladder,199,Alive,Alive or dead of other cause,Localized,999,1,1,Embryonal
+13450036,17,White,Male,Testis,110,Alive,Alive or dead of other cause,Localized,50,1,0,Embryonal
+13508516,16,Black,Male,Prostate,137,Alive,Alive or dead of other cause,Localized,79,0,1,Embryonal
+13936530,3,American Indian/Alaska Native,Male,Prostate,36,Dead,Dead (attributable to this cancer dx),Localized,42,0,1,Embryonal
+14027263,9,Black,Male,Testis,100,Alive,Alive or dead of other cause,Localized,103,1,0,Embryonal
+14484781,0,White,Female,Urinary Bladder,13,Dead,Dead (attributable to this cancer dx),Localized,999,1,0,Embryonal
+19070767,2,White,Male,Testis,186,Alive,Alive or dead of other cause,Localized,55,1,0,Embryonal
+22092027,15,White,Male,Prostate,117,Alive,Alive or dead of other cause,Localized,21,0,1,Embryonal
+25306182,15,White,Male,Testis,170,Alive,Alive or dead of other cause,Localized,55,1,0,Embryonal
+26909126,3,Asian or Pacific Islander,Male,Testis,49,Alive,Alive or dead of other cause,Localized,27,1,0,Embryonal
+26918594,2,White,Male,Testis,64,Alive,Alive or dead of other cause,Localized,75,1,0,Embryonal
+28539306,2,White,Male,Urinary Bladder,156,Alive,Alive or dead of other cause,Localized,25,1,1,Embryonal
+28560337,5,White,Female,Urinary Bladder,138,Alive,Alive or dead of other cause,Localized,34,1,1,Embryonal
+29009815,2,White,Female,Urinary Bladder,67,Alive,Alive or dead of other cause,Localized,70,0,1,Embryonal
+30967065,6,Black,Male,Testis,139,Alive,Alive or dead of other cause,Localized,55,1,0,Embryonal
+31404282,14,Black,Male,Testis,113,Alive,Alive or dead of other cause,Localized,80,1,0,Embryonal
+31453582,5,Black,Male,Testis,105,Alive,Alive or dead of other cause,Localized,47,1,0,Embryonal
+31470093,1,Asian or Pacific Islander,Male,Urinary Bladder,76,Alive,Alive or dead of other cause,Localized,999,1,1,Embryonal
+31485782,16,White,Male,Testis,68,Alive,Alive or dead of other cause,Localized,45,1,1,Embryonal
+33427670,1,White,Male,Testis,134,Alive,Alive or dead of other cause,Localized,25,1,0,Embryonal
+34447339,9,White,Female,Cervix Uteri,227,Alive,Alive or dead of other cause,Localized,999,1,0,Embryonal
+34539428,2,White,Male,Urinary Bladder,226,Alive,Alive or dead of other cause,Localized,65,1,1,Embryonal
+34554325,14,White,Male,Testis,223,Alive,Alive or dead of other cause,Localized,70,1,0,Embryonal
+34954543,5,White,Male,Testis,219,Alive,Alive or dead of other cause,Localized,999,1,0,Embryonal
+37216711,0,White,Female,Urinary Bladder,54,Alive,Alive or dead of other cause,Localized,35,1,0,Embryonal
+37703059,9,White,Male,Testis,169,Alive,Alive or dead of other cause,Localized,120,1,0,Embryonal
+43866056,18,White,Male,Testis,185,Alive,Alive or dead of other cause,Localized,70,1,0,Embryonal
+44486754,16,White,Male,Urinary Bladder,187,Alive,Alive or dead of other cause,Localized,999,1,0,Embryonal
+44963587,7,White,Male,Urinary Bladder,30,Dead,Dead (attributable to this cancer dx),Localized,999,1,1,Embryonal
+45588758,3,White,Male,Prostate,179,Alive,Alive or dead of other cause,Localized,999,0,1,Embryonal
+45591786,4,White,Male,Testis,178,Alive,Alive or dead of other cause,Localized,105,1,0,Embryonal
+49387448,10,White,Male,Testis,143,Alive,Alive or dead of other cause,Localized,45,1,1,Embryonal
+49883860,12,White,Female,Cervix Uteri,136,Alive,Alive or dead of other cause,Localized,80,1,0,Embryonal
+49883923,19,White,Female,Cervix Uteri,138,Alive,Alive or dead of other cause,Localized,999,1,0,Embryonal
+49907031,7,White,Female,Cervix Uteri,126,Alive,Alive or dead of other cause,Localized,999,1,0,Embryonal
+49992524,1,White,Male,Urinary Bladder,127,Alive,Alive or dead of other cause,Localized,44,0,0,Embryonal
+50515271,19,White,Female,Cervix Uteri,121,Alive,Alive or dead of other cause,Localized,30,1,0,Embryonal
+51039119,2,Black,Male,Prostate,107,Alive,Alive or dead of other cause,Localized,36,1,1,Embryonal
+51040970,12,White,Female,Cervix Uteri,123,Alive,Alive or dead of other cause,Localized,90,1,0,Embryonal
+51075013,3,White,Male,Testis,110,Alive,Alive or dead of other cause,Localized,25,1,0,Embryonal
+51531666,8,White,Male,Testis,101,Alive,Alive or dead of other cause,Localized,70,1,0,Embryonal
+53181357,14,White,Male,Testis,63,Alive,Alive or dead of other cause,Localized,168,1,0,Embryonal
+53218744,7,White,Male,Testis,29,Alive,Alive or dead of other cause,Localized,36,1,0,Embryonal
+53235894,2,White,Female,Urinary Bladder,60,Alive,Alive or dead of other cause,Localized,130,1,0,Embryonal
+58811732,8,Black,Male,Testis,88,Alive,Alive or dead of other cause,Localized,125,1,0,Embryonal
+59229034,18,Unknown,Female,Cervix Uteri,88,Alive,Alive or dead of other cause,Localized,999,0,0,Embryonal
+60235008,17,White,Male,Testis,156,Alive,Alive or dead of other cause,Localized,45,1,0,Embryonal
+60853903,2,White,Female,Urinary Bladder,101,Alive,Alive or dead of other cause,Localized,50,1,0,Embryonal
+69908505,4,White,Male,Testis,172,Alive,Alive or dead of other cause,Localized,999,1,0,Embryonal
+69934772,1,Black,Female,Urinary Bladder,177,Alive,Alive or dead of other cause,Localized,40,0,1,Embryonal
+70013864,2,White,Male,Prostate,15,Dead,Dead (attributable to this cancer dx),Localized,50,1,1,Embryonal
+70473587,7,White,Male,Testis,166,Alive,Alive or dead of other cause,Localized,65,1,0,Embryonal
+70492116,4,White,Male,Testis,144,Alive,Alive or dead of other cause,Localized,999,1,0,Embryonal
+71137762,3,Black,Male,Testis,113,Alive,Alive or dead of other cause,Localized,45,1,0,Embryonal
+72093748,6,White,Male,Testis,91,Alive,Alive or dead of other cause,Localized,35,1,1,Embryonal
+72634758,2,Black,Male,Testis,65,Alive,Alive or dead of other cause,Localized,45,1,1,Embryonal
+75475143,13,Black,Female,Cervix Uteri,135,Alive,Alive or dead of other cause,Localized,71,1,0,Embryonal
+76560322,2,White,Male,Urinary Bladder,76,Alive,Alive or dead of other cause,Localized,11,0,1,Embryonal
+76562833,13,Black,Female,Ovary,52,Dead,Alive or dead of other cause,Localized,320,1,0,Embryonal
+76614541,4,White,Male,Testis,64,Alive,Alive or dead of other cause,Localized,45,1,0,Embryonal
+2368719,16,Asian or Pacific Islander,Male,Testis,115,Alive,Alive or dead of other cause,Regional,75,1,0,Embryonal
+3434298,1,White,Male,Prostate,26,Dead,Dead (attributable to this cancer dx),Regional,900,0,0,Embryonal
+8911689,19,White,Male,Testis,13,Dead,Dead (attributable to this cancer dx),Regional,60,1,1,Embryonal
+8956815,7,White,Male,Testis,93,Alive,Alive or dead of other cause,Regional,40,1,1,Embryonal
+13467293,15,Black,Female,Cervix Uteri,14,Dead,Alive or dead of other cause,Regional,80,1,1,Embryonal
+13949926,18,Asian or Pacific Islander,Male,Testis,123,Alive,Alive or dead of other cause,Regional,140,1,1,Embryonal
+14047300,2,White,Male,Urinary Bladder,99,Alive,Alive or dead of other cause,Regional,104,0,1,Embryonal
+14568814,1,White,Male,Urinary Bladder,22,Dead,Dead (attributable to this cancer dx),Regional,21,0,0,Embryonal
+16514973,6,Asian or Pacific Islander,Male,Urinary Bladder,54,Alive,Alive or dead of other cause,Regional,120,1,1,Embryonal
+20055815,4,White,Male,Testis,106,Alive,Alive or dead of other cause,Regional,41,1,0,Embryonal
+20140315,3,Black,Female,"Uterus, NOS",44,Alive,Alive or dead of other cause,Regional,140,1,0,Embryonal
+25246989,18,White,Male,Testis,188,Alive,Alive or dead of other cause,Regional,40,1,1,Embryonal
+25882585,1,White,Male,Prostate,121,Alive,Alive or dead of other cause,Regional,51,0,1,Embryonal
+26307429,0,White,Female,Urinary Bladder,80,Alive,Alive or dead of other cause,Regional,100,1,0,Embryonal
+26919510,15,Black,Female,Cervix Uteri,60,Alive,Alive or dead of other cause,Regional,96,1,1,Embryonal
+28558721,13,White,Male,Testis,139,Alive,Alive or dead of other cause,Regional,33,1,1,Embryonal
+28569753,2,White,Female,Urinary Bladder,129,Alive,Alive or dead of other cause,Regional,999,0,1,Embryonal
+30860335,1,White,Male,Prostate,210,Alive,Alive or dead of other cause,Regional,999,0,1,Embryonal
+34430166,1,White,Male,Urinary Bladder,190,Alive,Alive or dead of other cause,Regional,50,1,1,Embryonal
+37216834,15,White,Male,Prostate,206,Alive,Alive or dead of other cause,Regional,50,1,0,Embryonal
+38330283,3,Black,Male,Prostate,26,Dead,Dead (attributable to this cancer dx),Regional,59,1,1,Embryonal
+38904946,15,White,Male,Testis,98,Alive,Alive or dead of other cause,Regional,133,1,0,Embryonal
+39399387,5,White,Male,Testis,73,Alive,Alive or dead of other cause,Regional,55,1,0,Embryonal
+39924297,13,Black,Male,Testis,64,Alive,Alive or dead of other cause,Regional,60,1,1,Embryonal
+42239447,2,White,Male,Urinary Bladder,190,Alive,Alive or dead of other cause,Regional,53,0,1,Embryonal
+44968588,9,White,Male,Prostate,202,Alive,Alive or dead of other cause,Regional,85,1,1,Embryonal
+47761774,2,White,Female,Urinary Bladder,194,Alive,Alive or dead of other cause,Regional,100,1,1,Embryonal
+48266145,4,White,Male,Urinary Bladder,174,Alive,Alive or dead of other cause,Regional,999,0,0,Embryonal
+48327298,19,Black,Male,Testis,17,Dead,Dead (attributable to this cancer dx),Regional,55,1,0,Embryonal
+48874946,17,Black,Male,Testis,29,Dead,Dead (attributable to this cancer dx),Regional,150,1,1,Embryonal
+49922153,4,White,Male,Testis,135,Alive,Alive or dead of other cause,Regional,48,1,0,Embryonal
+49969392,0,White,Male,Urinary Bladder,55,Dead,Dead (attributable to this cancer dx),Regional,46,1,1,Embryonal
+51013950,1,White,Male,Prostate,108,Alive,Alive or dead of other cause,Regional,52,0,1,Embryonal
+70507752,0,White,Male,Testis,127,Alive,Alive or dead of other cause,Regional,30,1,0,Embryonal
+71001525,17,Black,Male,Urinary Bladder,29,Dead,Dead (attributable to this cancer dx),Regional,48,1,1,Embryonal
+71016851,9,White,Male,Urinary Bladder,136,Alive,Alive or dead of other cause,Regional,999,0,1,Embryonal
+71115000,18,Black,Female,Cervix Uteri,119,Alive,Alive or dead of other cause,Regional,90,1,0,Embryonal
+71615941,14,Asian or Pacific Islander,Male,Testis,105,Alive,Alive or dead of other cause,Regional,150,1,1,Embryonal
+72181682,1,White,Female,Urinary Bladder,79,Alive,Alive or dead of other cause,Regional,150,1,0,Embryonal
+74874832,3,White,Male,Testis,182,Alive,Alive or dead of other cause,Regional,999,1,0,Embryonal
+75386385,17,Black,Female,Cervix Uteri,161,Alive,Alive or dead of other cause,Regional,999,1,0,Embryonal
+75400028,13,White,Male,Testis,153,Alive,Alive or dead of other cause,Regional,90,1,1,Embryonal
+75950120,6,White,Female,Ovary,21,Dead,Dead (attributable to this cancer dx),Regional,999,1,0,Embryonal
+75995342,6,White,Male,Prostate,113,Alive,Alive or dead of other cause,Regional,100,0,1,Embryonal
+76582209,0,White,Male,Prostate,68,Alive,Alive or dead of other cause,Regional,75,1,1,Embryonal
+19586835,1,White,Male,Prostate,138,Alive,Alive or dead of other cause,Unstaged,127,0,1,Embryonal
+20129819,4,White,Female,Urinary Bladder,83,Alive,Alive or dead of other cause,Unstaged,58,1,0,Embryonal
+22095694,2,White,Male,Urinary Bladder,115,Alive,Alive or dead of other cause,Unstaged,40,0,1,Embryonal
+34969790,17,White,Female,Cervix Uteri,209,Alive,Alive or dead of other cause,Unstaged,999,1,0,Embryonal
+38372246,1,White,Female,"Uterus, NOS",71,Alive,Alive or dead of other cause,Unstaged,999,0,0,Embryonal
+57572301,13,White,Male,Testis,11,Dead,Dead (attributable to this cancer dx),Unstaged,75,1,1,Embryonal
+58398188,0,White,Male,Prostate,142,Alive,Alive or dead of other cause,Unstaged,70,1,0,Embryonal
+2848057,18,White,Male,Other Male Genital Organs,178,Alive,Alive or dead of other cause,Unstaged,47,1,1,Embryonal
+2872567,8,White,Male,Other Male Genital Organs,188,Alive,Alive or dead of other cause,Unstaged,35,1,0,Embryonal
+3524933,15,Asian or Pacific Islander,Male,Other Male Genital Organs,102,Alive,Alive or dead of other cause,Unstaged,73,1,1,Embryonal
+4038428,1,White,Female,Vagina,70,Alive,Alive or dead of other cause,Unstaged,100,1,1,Embryonal
+7847574,14,White,Male,Other Male Genital Organs,202,Alive,Alive or dead of other cause,Unstaged,90,1,1,Embryonal
+8522242,14,Black,Male,Other Male Genital Organs,93,Alive,Alive or dead of other cause,Unstaged,9,1,0,Embryonal
+12941474,0,White,Female,Vagina,201,Alive,Alive or dead of other cause,Unstaged,40,0,0,Embryonal
+13364316,15,White,Male,Other Male Genital Organs,68,Dead,Dead (attributable to this cancer dx),Unstaged,90,1,1,Embryonal
+14010008,3,White,Female,Vagina,109,Alive,Alive or dead of other cause,Unstaged,69,1,1,Embryonal
+14519432,13,Black,Male,Other Male Genital Organs,42,Dead,Dead (attributable to this cancer dx),Unstaged,160,1,1,Embryonal
+19022048,14,White,Male,Other Male Genital Organs,220,Alive,Alive or dead of other cause,Unstaged,15,1,1,Embryonal
+20152880,4,White,Male,Other Male Genital Organs,71,Alive,Alive or dead of other cause,Unstaged,48,1,0,Embryonal
+25859344,2,White,Female,Vagina,35,Dead,Dead (attributable to this cancer dx),Unstaged,20,1,0,Embryonal
+29016435,13,Asian or Pacific Islander,Male,Other Male Genital Organs,68,Alive,Alive or dead of other cause,Unstaged,40,1,0,Embryonal
+30463642,15,Black,Male,Other Male Genital Organs,182,Alive,Alive or dead of other cause,Unstaged,999,1,1,Embryonal
+30887285,1,White,Female,Vagina,183,Alive,Alive or dead of other cause,Unstaged,25,1,0,Embryonal
+30957335,17,Black,Male,Other Male Genital Organs,143,Alive,Alive or dead of other cause,Unstaged,999,1,0,Embryonal
+31410090,2,Black,Female,Vagina,111,Alive,Alive or dead of other cause,Unstaged,8,1,0,Embryonal
+37211088,9,White,Female,Vagina,189,Alive,Alive or dead of other cause,Unstaged,80,0,0,Embryonal
+37733600,1,Black,Female,Vagina,122,Alive,Alive or dead of other cause,Unstaged,65,0,0,Embryonal
+37829591,0,Black,Female,Vagina,136,Alive,Alive or dead of other cause,Unstaged,27,0,0,Embryonal
+38879113,18,White,Male,Other Male Genital Organs,100,Alive,Alive or dead of other cause,Unstaged,62,1,1,Embryonal
+46017188,1,White,Female,Vagina,148,Alive,Alive or dead of other cause,Unstaged,999,1,0,Embryonal
+47718116,14,White,Male,Other Male Genital Organs,174,Alive,Alive or dead of other cause,Unstaged,180,1,1,Embryonal
+47760918,4,White,Male,Other Male Genital Organs,193,Alive,Alive or dead of other cause,Unstaged,15,1,0,Embryonal
+48214806,13,White,Male,Other Male Genital Organs,123,Dead,Alive or dead of other cause,Unstaged,150,1,1,Embryonal
+48771170,1,White,Female,Vagina,160,Alive,Alive or dead of other cause,Unstaged,110,1,1,Embryonal
+49413112,4,White,Male,Other Male Genital Organs,142,Alive,Alive or dead of other cause,Unstaged,30,1,0,Embryonal
+49926087,13,White,Male,Other Male Genital Organs,122,Alive,Alive or dead of other cause,Unstaged,55,1,0,Embryonal
+49959222,1,White,Female,Vagina,63,Dead,Alive or dead of other cause,Unstaged,60,1,0,Embryonal
+51013712,15,White,Male,Other Male Genital Organs,112,Alive,Alive or dead of other cause,Unstaged,39,1,1,Embryonal
+51067090,1,White,Female,Vagina,77,Alive,Alive or dead of other cause,Unstaged,999,1,1,Embryonal
+51641726,0,White,Male,Other Male Genital Organs,17,Dead,Dead (attributable to this cancer dx),Unstaged,90,1,0,Embryonal
+57926353,17,White,Male,Other Male Genital Organs,167,Alive,Alive or dead of other cause,Unstaged,17,1,1,Embryonal
+57994393,3,White,Female,Vagina,155,Alive,Alive or dead of other cause,Unstaged,30,1,0,Embryonal
+58332977,12,White,Female,Vagina,133,Alive,Alive or dead of other cause,Unstaged,999,0,0,Embryonal
+58408613,2,Black,Female,Vagina,116,Alive,Alive or dead of other cause,Unstaged,80,1,1,Embryonal
+58472017,12,White,Female,Vagina,99,Alive,Alive or dead of other cause,Unstaged,160,1,0,Embryonal
+58883327,13,White,Male,Other Male Genital Organs,31,Dead,Dead (attributable to this cancer dx),Unstaged,60,1,1,Embryonal
+60183113,2,White,Female,Vagina,42,Dead,Alive or dead of other cause,Unstaged,999,0,0,Embryonal
+60753420,2,White,Female,Vagina,116,Alive,Alive or dead of other cause,Unstaged,44,0,0,Embryonal
+60849603,2,Black,Female,Vagina,121,Alive,Alive or dead of other cause,Unstaged,25,1,0,Embryonal
+62634132,16,Black,Male,Other Male Genital Organs,79,Alive,Alive or dead of other cause,Unstaged,37,1,1,Embryonal
+69916529,19,White,Male,Other Male Genital Organs,37,Dead,Dead (attributable to this cancer dx),Unstaged,90,1,0,Embryonal
+70044924,14,White,Male,Other Male Genital Organs,159,Alive,Alive or dead of other cause,Unstaged,70,1,1,Embryonal
+71108615,13,White,Male,Other Male Genital Organs,46,Dead,Dead (attributable to this cancer dx),Unstaged,35,1,0,Embryonal
+72625790,16,Unknown,Male,Other Male Genital Organs,76,Alive,Alive or dead of other cause,Unstaged,10,1,1,Embryonal
+72732229,1,White,Female,Vagina,59,Alive,Alive or dead of other cause,Unstaged,999,0,0,Embryonal
+75525049,11,Black,Male,Other Male Genital Organs,109,Alive,Alive or dead of other cause,Unstaged,80,1,0,Embryonal
+76035987,1,White,Female,Vagina,99,Alive,Alive or dead of other cause,Unstaged,999,1,0,Embryonal
+76069593,3,Black,Female,Vagina,92,Alive,Alive or dead of other cause,Unstaged,999,0,0,Embryonal
+2836369,13,White,Male,Prostate,28,Dead,Dead (attributable to this cancer dx),Distant,150,0,1,Alveolar
+4033210,18,White,Male,Prostate,27,Dead,Alive or dead of other cause,Distant,999,0,1,Alveolar
+8375729,16,White,Male,Prostate,7,Dead,Dead (attributable to this cancer dx),Distant,999,0,1,Alveolar
+12934049,4,White,Male,Urinary Bladder,196,Alive,Alive or dead of other cause,Distant,100,1,1,Alveolar
+12947588,17,White,Male,Prostate,12,Dead,Dead (attributable to this cancer dx),Distant,70,0,1,Alveolar
+13934546,16,White,Male,Prostate,26,Dead,Dead (attributable to this cancer dx),Distant,999,0,1,Alveolar
+22473648,19,White,Male,Testis,60,Alive,Alive or dead of other cause,Distant,20,1,0,Alveolar
+26307449,16,White,Female,Vulva,15,Dead,Dead (attributable to this cancer dx),Distant,95,0,1,Alveolar
+28985135,16,White,Male,Prostate,27,Dead,Dead (attributable to this cancer dx),Distant,129,0,1,Alveolar
+29003998,19,White,Male,Prostate,15,Dead,Dead (attributable to this cancer dx),Distant,999,0,1,Alveolar
+30967068,6,Black,Male,Prostate,14,Dead,Dead (attributable to this cancer dx),Distant,999,0,1,Alveolar
+31413601,17,Black,Male,Testis,18,Dead,Dead (attributable to this cancer dx),Distant,70,1,1,Alveolar
+33046895,0,Asian or Pacific Islander,Male,Prostate,18,Dead,Dead (attributable to this cancer dx),Distant,65,1,1,Alveolar
+71003910,0,White,Male,Prostate,152,Alive,Alive or dead of other cause,Distant,999,1,0,Alveolar
+30862928,6,Black,Male,Testis,161,Alive,Alive or dead of other cause,Localized,999,1,0,Alveolar
+30920121,1,Black,Female,Vulva,165,Alive,Alive or dead of other cause,Localized,22,1,1,Alveolar
+31366283,14,Black,Male,Testis,83,Alive,Alive or dead of other cause,Localized,80,1,0,Alveolar
+33479272,1,White,Female,Vulva,102,Alive,Alive or dead of other cause,Localized,25,1,1,Alveolar
+37753308,12,White,Male,Testis,165,Alive,Alive or dead of other cause,Localized,55,1,0,Alveolar
+26371287,19,Black,Female,Vulva,35,Dead,Dead (attributable to this cancer dx),Regional,130,0,1,Alveolar
+42835873,16,White,Female,Vulva,191,Alive,Alive or dead of other cause,Regional,70,0,1,Alveolar
+50486957,4,White,Female,Urinary Bladder,122,Alive,Alive or dead of other cause,Regional,240,1,1,Alveolar
+70478883,7,Black,Male,Testis,148,Alive,Alive or dead of other cause,Regional,45,1,0,Alveolar
+14557316,14,White,Female,Vagina,62,Alive,Alive or dead of other cause,Unstaged,78,0,1,Alveolar
+28487986,1,White,Male,Other Male Genital Organs,204,Alive,Alive or dead of other cause,Unstaged,45,1,1,Alveolar
+49944512,2,White,Male,Other Male Genital Organs,114,Alive,Alive or dead of other cause,Unstaged,50,1,0,Alveolar
