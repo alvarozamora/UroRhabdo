@@ -4,9 +4,11 @@ This repository is for our 2020 paper entitled, "Deep Learning Enabled Predictio
 
 ## Usage
 
-### Requirement:
-PyTorch 1.4 
-Python 3.6
+### Requirements:
+PyTorch 1.4 <br />
+Python 3.6 <br />
+Numpy 1.16 <br />
+Matplotlib 3.1 
 
 ### Getting started: 
 
@@ -16,6 +18,16 @@ git clone https://github.com/alvarozamora/UroRhabdo
 cd UroRhabdo
 ```
 
-* Use "preprocessing.py" preprocess the data stored in uro.csv 
+* Using your text editor, adjust the path name of uro.csv in the 9th line of preprocessing.py as appropriate.
 
-* Use "train.py" to train the model. Model architecture is stored in model.py
+* Execute the following to preprocess the data
+
+```
+python preprocessing.py
+```
+
+* Execute the following to train the models. Model architecture is stored in model.py
+
+```
+python train.py
+```
